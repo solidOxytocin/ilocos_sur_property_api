@@ -1,0 +1,113 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Get a free hosted Postgres database in seconds: `npx create-db`
+
+generator client {
+  provider = "prisma-client"
+  output   = "../generated/prisma"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+
+model Property {
+  id Int @id @default(autoincrement())
+  title String 
+  type PropertyType
+  status PropertyStatus
+  price Float
+  
+  lotArea Float?
+  floorArea Float?
+  bedRooms Int?
+  bathRooms Int?
+  parking Int?
+  details String?
+  slug String?
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  // Relations
+  location Location?
+  feature Feature[]
+  amenity Amenity[]
+  media Media[]
+}
+
+
+model Location{
+  id Int @id @default(autoincrement())
+  address String
+  barangay String
+  city String
+  province String
+  country String
+
+  region String?
+  zipCode String?
+  coordinates Coordinate?
+
+  propertyId Int @unique
+  property   Property @relation(fields: [propertyId], references: [id])
+
+}
+
+
+model Coordinate{
+  id Int @id @default(autoincrement())
+  lat Float
+  lng Float
+
+  locationId Int @unique
+  location Location @relation(fields: [locationId] , references: [id])
+}
+model Feature{
+  id Int @id  @default(autoincrement())
+  name String
+  key String @unique
+
+  properties Property[]
+}
+
+model Amenity{
+  id Int @id @default(autoincrement())
+  name String
+  key String
+
+  properties Property[]
+
+}
+model Media{
+  id Int @id @default(autoincrement())
+  type MediaType
+  url String
+  isPrimary Boolean @default(false)
+  propertyId Int 
+  property Property @relation(fields: [propertyId], references: [id])
+
+}
+
+enum PropertyType{
+  LOT
+  HOUSE
+  CONDO
+  COMMERCIAL
+}
+
+enum PropertyStatus{
+  AVAILABLE
+  SOLD
+  RESERVED
+}
+
+
+
+enum MediaType{
+  IMAGE
+  VIDEO
+}
+
