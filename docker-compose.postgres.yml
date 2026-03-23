@@ -6,7 +6,7 @@ services:
     environment:
       POSTGRES_USER: postgres
       POSTGRES_PASSWORD: 69MEXT123
-      POSTGRES_DB: ilocos_user_property_db  
+      POSTGRES_DB: ilocos_sur_property_db  
     ports:
       - "5432:5432"
     networks:
@@ -22,6 +22,17 @@ services:
       options:
         max-size: "10m"
         max-file: "3"
+  api:
+    build: .
+    ports:
+      - "3000:3000"
+    environment:
+      - DATABASE_URL:"postgresql://postgres:69MEXT123@postgres:5432/ilocos_sur_property_db?schema=public" 
+    networks:
+      - prisma-network
+    depends_on:
+      postgres:
+        condition: service_healthy
 networks:
   prisma-network:
     driver: bridge

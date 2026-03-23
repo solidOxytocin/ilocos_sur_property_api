@@ -5,8 +5,9 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "node src/index.js",
-    "db:deploy": "npx prisma migrate deploy && npx prisma generate"
+    "dev": "tsx src/index.ts",
+    "db:deploy": "npx prisma migrate deploy && npx prisma generate",
+    "docker:start": "npx prisma migrate deploy && tsx src/index.ts"
   },
   "keywords": [],
   "author": "",
@@ -21,6 +22,8 @@
     "pg": "^8.20.0"
   },
   "devDependencies": {
+    "@types/cors": "^2.8.19",
+    "@types/express": "^5.0.6",
     "@types/node": "^25.5.0",
     "@types/pg": "^8.20.0",
     "prisma": "^7.5.0",
