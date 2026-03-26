@@ -16,7 +16,7 @@ async function clearTableData(){
  
   await prisma.coordinate.deleteMany();
   await prisma.location.deleteMany();
-  await prisma.feature.deleteMany(); 
+  await prisma.features.deleteMany(); 
   await prisma.amenity.deleteMany(); 
   await prisma.media.deleteMany();
   await prisma.property.deleteMany();
@@ -25,7 +25,7 @@ async function clearTableData(){
 async function featureSeeding(){
   console.log("⭐ Feature Seeding Start")
 
-  const features = await prisma.feature.createMany({
+  const features = await prisma.features.createMany({
     data: [
       { name: "Main Road", key: "road" },
       { name: "Hospital", key: "hospital" },
@@ -67,6 +67,13 @@ async function propertySeeding(){
               city: item.location.city,
               province: item.location.province,
               country: item.location.country,
+              coordinates: {
+                create:{
+                    lng:  item.location.coordinates?.lng ?? 0 ,
+                    lat: item.location.coordinates?.lat ?? 0
+                }
+               
+              }
             },
           },
 
@@ -78,7 +85,7 @@ async function propertySeeding(){
             })),
           },
 
-          feature: {
+          features: {
             connect: item.features.map((f: any) => ({
               key: f.key,
             })),

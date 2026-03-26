@@ -105,6 +105,11 @@ export const mockProperties: Property[] = [
       city: "San Vicente",
       province: "Ilocos Sur",
       country: "Philippines",
+      coordinates:
+        {
+          lat: 123,
+          lng: 321
+        }
     },
 
     media: [
@@ -145,6 +150,11 @@ export const mockProperties: Property[] = [
       city: "Vigan City",
       province: "Ilocos Sur",
       country: "Philippines",
+      coordinates:
+        {
+          lat: 1309823,
+          lng: 321123
+        }
     },
 
     media: [
@@ -185,6 +195,11 @@ export const mockProperties: Property[] = [
       city: "Vigan City",
       province: "Ilocos Sur",
       country: "Philippines",
+      coordinates:
+        {
+          lat: 234321,
+          lng: 321321
+        }
     },
 
     media: [
@@ -221,6 +236,11 @@ export const mockProperties: Property[] = [
       city: "Bantay",
       province: "Ilocos Sur",
       country: "Philippines",
+      coordinates:
+        {
+          lat: 678678,
+          lng: 63456
+        }
     },
 
     media: [
@@ -264,6 +284,11 @@ export const mockProperties: Property[] = [
       city: "Magsingal",
       province: "Ilocos Sur",
       country: "Philippines",
+      coordinates:
+        {
+          lat: 123678,
+          lng: 321678
+        }
     },
 
     media: [

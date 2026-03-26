@@ -34,7 +34,7 @@ model Property {
 
   // Relations
   location Location?
-  feature Feature[]
+  features Features[]
   amenity Amenity[]
   media Media[]
 }
@@ -66,7 +66,7 @@ model Coordinate{
   locationId Int @unique
   location Location @relation(fields: [locationId] , references: [id])
 }
-model Feature{
+model Features{
   id Int @id  @default(autoincrement())
   name String
   key String @unique
