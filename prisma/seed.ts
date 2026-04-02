@@ -41,6 +41,22 @@ async function featureSeeding(){
 console.log("✅  Feature Seeding Done ")
 }
 
+async function amenitySeeding(){
+  console.log("🏊 Amenity Seeding Start")
+
+  const amenities = await prisma.amenity.createMany({
+    data: [
+      { name: "Swimming Pool", key: "pool" },
+      { name: "Gym", key: "gym" },
+      { name: "24/7 Security", key: "security" },
+      { name: "Elevator", key: "elevator" },
+    ],
+    skipDuplicates: true,
+  });
+
+  console.log("✅  Amenity Seeding Done ")
+}
+
 async function propertySeeding(){
   console.log("🏢 Property Seeding Start")
 
@@ -86,8 +102,13 @@ async function propertySeeding(){
           },
 
           features: {
-            connect: item.features.map((f: any) => ({
+            connect: (item.features || []).map((f: any) => ({
               key: f.key,
+            })),
+          },
+          amenity: {
+            connect: (item.amenities || []).map((a: any) => ({
+              key: a.key,
             })),
           },
         },
@@ -100,6 +121,7 @@ async function propertySeeding(){
 async function main() {
   console.log("🌱 Seed Starts");
   await featureSeeding()
+  await amenitySeeding()
   await propertySeeding()
   console.log("✅ Seeding complete!");
 }

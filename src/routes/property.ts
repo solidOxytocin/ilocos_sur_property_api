@@ -16,9 +16,17 @@ router.get('/getAll',async (req,res)=>{
         }
     },
     });
+    const formattedProperties = properties.map(property => {
+        // Map Prisma's 'amenity' to 'amenities' for the frontend
+        const { amenity, ...rest } = property;
+        return {
+            ...rest,
+            amenities: amenity
+        };
+    });
 
     res.json(
-        properties
+        formattedProperties
     );
 });
 

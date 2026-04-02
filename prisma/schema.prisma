@@ -77,7 +77,7 @@ model Features{
 model Amenity{
   id Int @id @default(autoincrement())
   name String
-  key String
+  key String @unique
 
   properties Property[]
 

@@ -83,7 +83,10 @@ export const mockProperties: Property[] = [
       { name: "Hospital", key: "hospital" },
     ],
 
-    amenities: [],
+    amenities: [
+      { name: "Swimming Pool", key: "pool" },
+      { name: "24/7 Security", key: "security" },
+    ],
 
     lotArea: 1500,
 
@@ -127,7 +130,9 @@ export const mockProperties: Property[] = [
       { name: "Hospital", key: "hospital" },
     ],
 
-    amenities: [],
+    amenities: [
+      { name: "Gym", key: "gym" }
+    ],
 
     lotArea: 1800,
 
@@ -173,7 +178,10 @@ export const mockProperties: Property[] = [
       { name: "Main Road", key: "road" },
     ],
 
-    amenities: [],
+    amenities: [
+      { name: "Elevator", key: "elevator" },
+      { name: "24/7 Security", key: "security" }
+    ],
 
     lotArea: 1200,
 
@@ -213,7 +221,9 @@ export const mockProperties: Property[] = [
 
     features: [{ name: "Parking", key: "parking" }],
 
-    amenities: [],
+    amenities: [
+      { name: "Swimming Pool", key: "pool" }
+    ],
 
     lotArea: 1400,
 
@@ -261,7 +271,10 @@ export const mockProperties: Property[] = [
       { name: "Main Road", key: "road" },
     ],
 
-    amenities: [],
+    amenities: [
+      { name: "Gym", key: "gym" },
+      { name: "Elevator", key: "elevator" }
+    ],
 
     lotArea: 1600,
 
@@ -302,7 +315,10 @@ export const mockProperties: Property[] = [
 
     features: [{ name: "Mall Nearby", key: "shopping" }],
 
-    amenities: [],
+    amenities: [
+      { name: "24/7 Security", key: "security" },
+      { name: "Swimming Pool", key: "pool" }
+    ],
 
     lotArea: 2700,
 
