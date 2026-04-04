@@ -53,7 +53,7 @@ model Location{
   coordinates Coordinate?
 
   propertyId Int @unique
-  property   Property @relation(fields: [propertyId], references: [id])
+  property   Property @relation(fields: [propertyId], references: [id], onDelete: Cascade)
 
 }
 
@@ -64,7 +64,7 @@ model Coordinate{
   lng Float
 
   locationId Int @unique
-  location Location @relation(fields: [locationId] , references: [id])
+  location Location @relation(fields: [locationId] , references: [id], onDelete: Cascade)
 }
 model Features{
   id Int @id  @default(autoincrement())
@@ -88,7 +88,7 @@ model Media{
   url String
   isPrimary Boolean @default(false)
   propertyId Int 
-  property Property @relation(fields: [propertyId], references: [id])
+  property Property @relation(fields: [propertyId], references: [id], onDelete: Cascade)
 
 }
 

@@ -8,8 +8,10 @@ app.use (express.json());
 app.use(cors());
 
 
-app.use("/property",propertyRouter)
+import { adminRouter } from "./routes/admin";
 
+app.use("/property",propertyRouter)
+app.use("/admin", adminRouter)
 
 
 const PORT = process.env.PORT || 3000;

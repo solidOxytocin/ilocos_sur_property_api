@@ -78,7 +78,7 @@ router.get('/getAll', async (req, res) => {
             }
         },
     });
-    const formattedProperties = properties.map(property => {
+    const formattedProperties = properties.map((property: any) => {
         // Map Prisma's 'amenity', 'bedRooms', 'bathRooms' to frontend expected keys
         const { amenity, bedRooms, bathRooms, ...rest } = property;
         return {
