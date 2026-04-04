@@ -39,11 +39,11 @@ export type Property = {
   type: "lot" | "house" | "condo" | "commercial";
   status: "available" | "sold" | "reserved";
   price: number;
-  lotArea?: number;
-  floorArea?: number;
-  bedrooms?: number;
-  bathrooms?: number;
-  parking?: number;
+  lotArea?: number | null;
+  floorArea?: number | null;
+  bedrooms?: number | null;
+  bathrooms?: number | null;
+  parking?: number | null;
   details?: string;
   createdAt: string;
   updatedAt?: string;
@@ -76,6 +76,16 @@ export const mockProperties: Property[] = [
         url: "https://media.istockphoto.com/id/2155879454/photo/this-is-an-exterior-photo-of-a-home-for-sale-in-beverly-hills-ca.jpg?s=612x612&w=0&k=20&c=uSKacMQvmaYX5Pf5Br7pUfErYQbNt_UWXRTjfwrdSDQ=",
         isPrimary: true,
       },
+      {
+        id: 201,
+        type: "image",
+        url: "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+      },
+      {
+        id: 202,
+        type: "image",
+        url: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+      }
     ],
 
     features: [
@@ -89,6 +99,10 @@ export const mockProperties: Property[] = [
     ],
 
     lotArea: 1500,
+    floorArea: null,
+    bedrooms: null,
+    bathrooms: null,
+    parking: null,
 
     details:
       "Spacious lot located in the heart of Vigan City, ideal for residential or commercial development. Close to schools, hospitals, and main roads for easy access.",
@@ -122,6 +136,11 @@ export const mockProperties: Property[] = [
         url: "https://agentrealestateschools.com/wp-content/uploads/2021/11/real-estate-property.jpg",
         isPrimary: true,
       },
+      {
+        id: 101,
+        type: "image",
+        url: "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+      }
     ],
 
     features: [
@@ -135,6 +154,10 @@ export const mockProperties: Property[] = [
     ],
 
     lotArea: 1800,
+    floorArea: null,
+    bedrooms: null,
+    bathrooms: null,
+    parking: null,
 
     details:
       "Prime property in San Vicente with excellent road access. Perfect for building a family home or a small business. Close to schools and healthcare facilities.",
@@ -142,9 +165,9 @@ export const mockProperties: Property[] = [
 
   {
     id: 3,
-    title: "Central Lot in Vigan",
-    type: "lot",
-    status: "available",
+    title: "Central House in Vigan",
+    type: "house",
+    status: "sold",
     price: 180000,
     createdAt: "2026-03-07",
     updatedAt: "2026-03-07",
@@ -169,6 +192,21 @@ export const mockProperties: Property[] = [
         url: "https://prod.rockmedialibrary.com/api/public/content/ff061825fa8e44bf8108de5c786c0062?v=4c4f7c7a",
         isPrimary: true,
       },
+      {
+        id: 102,
+        type: "image",
+        url: "https://images.unsplash.com/photo-1600607687931-cebf10cbdfca?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+      },
+      {
+        id: 103,
+        type: "image",
+        url: "https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+      },
+      {
+        id: 104,
+        type: "image",
+        url: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+      }
     ],
 
     features: [
@@ -184,6 +222,10 @@ export const mockProperties: Property[] = [
     ],
 
     lotArea: 1200,
+    floorArea: 240,
+    bedrooms: 4,
+    bathrooms: 3,
+    parking: 2,
 
     details:
       "Spacious lot located in the heart of Vigan City, ideal for residential or commercial development.",
@@ -191,8 +233,8 @@ export const mockProperties: Property[] = [
 
   {
     id: 4,
-    title: "Residential Lot in Barangay I",
-    type: "lot",
+    title: "Luxury Condo in Barangay I",
+    type: "condo",
     status: "available",
     price: 450000,
     createdAt: "2026-03-07",
@@ -225,7 +267,11 @@ export const mockProperties: Property[] = [
       { name: "Swimming Pool", key: "pool" }
     ],
 
-    lotArea: 1400,
+    lotArea: null,
+    floorArea: 110,
+    bedrooms: 2,
+    bathrooms: 2,
+    parking: 1,
 
     details:
       "Spacious lot located in the heart of Vigan City, ideal for residential or commercial development.",

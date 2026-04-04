@@ -17,11 +17,13 @@ router.get('/getAll',async (req,res)=>{
     },
     });
     const formattedProperties = properties.map(property => {
-        // Map Prisma's 'amenity' to 'amenities' for the frontend
-        const { amenity, ...rest } = property;
+        // Map Prisma's 'amenity', 'bedRooms', 'bathRooms' to frontend expected keys
+        const { amenity, bedRooms, bathRooms, ...rest } = property;
         return {
             ...rest,
-            amenities: amenity
+            amenities: amenity,
+            bedrooms: bedRooms,
+            bathrooms: bathRooms
         };
     });
 
