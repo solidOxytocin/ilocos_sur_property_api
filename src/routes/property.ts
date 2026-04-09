@@ -65,19 +65,30 @@ router.get('/getAll', async (req, res) => {
         if (maxArea) where.lotArea.lte = parseFloat(String(maxArea));
     }
 
-    const properties = await prisma.property.findMany({
-        where,
-        include: {
-            features: true,
-            amenity: true,
-            media: true,
-            location: {
-                include: {
-                    coordinates: true
+    const page  = Math.max(1, parseInt(String(req.query.page  ?? '1'),  10));
+    const limit = Math.max(1, parseInt(String(req.query.limit ?? '12'), 10));
+    const skip  = (page - 1) * limit;
+
+    const [total, properties] = await Promise.all([
+        prisma.property.count({ where }),
+        prisma.property.findMany({
+            where,
+            skip,
+            take: limit,
+            include: {
+                features: true,
+                amenity: true,
+                media: true,
+                location: {
+                    include: {
+                        coordinates: true
+                    }
                 }
-            }
-        },
-    });
+            },
+            orderBy: { createdAt: 'desc' },
+        }),
+    ]);
+
     const formattedProperties = properties.map((property: any) => {
         // Map Prisma's 'amenity', 'bedRooms', 'bathRooms' to frontend expected keys
         const { amenity, bedRooms, bathRooms, ...rest } = property;
@@ -89,9 +100,12 @@ router.get('/getAll', async (req, res) => {
         };
     });
 
-    res.json(
-        formattedProperties
-    );
+    res.json({
+        data: formattedProperties,
+        total,
+        page,
+        totalPages: Math.ceil(total / limit),
+    });
 });
 
 export const propertyRouter = router;
