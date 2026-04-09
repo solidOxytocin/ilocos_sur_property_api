@@ -4,16 +4,16 @@ import {prisma} from "../../lib/prisma";
 
 
 router.get('/bounds', async (req, res) => {
-    const aggregate = await prisma.property.aggregate({
-        _max: {
-            price: true,
-            lotArea: true
-        }
-    });
-    res.json({
-        maxPrice: aggregate._max.price || 50000000,
-        maxLotArea: aggregate._max.lotArea || 1000
-    });
+  const result:any[] = await prisma.$queryRaw`
+    SELECT MAX("lotArea") AS "maxLotArea", MAX("price") AS "maxPrice"
+    FROM "Property"
+    WHERE "lotArea" IS NOT NULL AND "lotArea" != 'NaN'
+  `;
+
+  const maxLotArea = result[0]?.maxLotArea ?? 1500;
+  const maxPrice = result[0]?.maxPrice ?? 50000000;
+
+  res.json({ maxLotArea, maxPrice });
 });
 
 router.get('/getAll', async (req, res) => {
