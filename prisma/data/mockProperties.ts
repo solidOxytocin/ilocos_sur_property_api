@@ -63,7 +63,7 @@ const HOUSE_IMGS = [
 ];
 const LOT_IMGS = [
   "https://images.unsplash.com/photo-1500382017468-9049fed747ef?w=800&q=80",
-  "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&q=80",
+  "https://www.schonsheck.com/wp-content/uploads/2023/12/Blog-_0003_iStock-1404294992.jpg",
   "https://images.unsplash.com/photo-1472396961693-142e6e269027?w=800&q=80",
   "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=800&q=80",
 ];
@@ -76,7 +76,7 @@ const CONDO_IMGS = [
 const COMMERCIAL_IMGS = [
   "https://images.unsplash.com/photo-1486325212027-8081e485255e?w=800&q=80",
   "https://images.unsplash.com/photo-1497366216548-37526070297c?w=800&q=80",
-  "https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=800&q=80",
+  "https://www.schonsheck.com/wp-content/uploads/2023/12/Blog-_0003_iStock-1404294992.jpg",
 ];
 
 function m(id: number, url: string, isPrimary = false): Media {
