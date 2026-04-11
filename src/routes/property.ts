@@ -25,7 +25,9 @@ router.get('/getAll', async (req, res) => {
         maxPrice,
         city,
         minArea,
-        maxArea
+        maxArea,
+        sortBy,
+        sortOrder,
     } = req.query;
 
     const where: any = {};
@@ -69,6 +71,35 @@ router.get('/getAll', async (req, res) => {
     const limit = Math.max(1, parseInt(String(req.query.limit ?? '12'), 10));
     const skip  = (page - 1) * limit;
 
+    const allowedSortFields = ['price', 'createdAt', 'lotArea', 'city', 'title'];
+    const nullableFields = ['lotArea'];
+
+    const sortField = allowedSortFields.includes(String(sortBy))
+    ? String(sortBy)
+    : 'createdAt';
+
+    const order: 'asc' | 'desc' = sortOrder === 'asc' ? 'asc' : 'desc';
+
+    let orderBy;
+
+    if (sortField === 'city') {
+        orderBy = {
+            location: {
+            city: order,
+            },
+    };
+    } else if (nullableFields.includes(sortField)) {
+        orderBy = {
+            [sortField]: {
+            sort: order,
+            nulls: 'last',
+            },
+        };
+    } else {
+    orderBy = {
+        [sortField]: order,
+    };
+    }
     const [total, properties] = await Promise.all([
         prisma.property.count({ where }),
         prisma.property.findMany({
@@ -85,7 +116,8 @@ router.get('/getAll', async (req, res) => {
                     }
                 }
             },
-            orderBy: { createdAt: 'desc' },
+            orderBy:orderBy
+            
         }),
     ]);
 
