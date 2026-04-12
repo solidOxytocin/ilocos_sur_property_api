@@ -50,6 +50,7 @@ router.post('/property', async (req, res) => {
                     country: location.country || 'Philippines',
                     region: location.region || null,
                     zipCode: location.zipCode || null,
+                    boundaries: location.boundaries || null,
                 }
             };
             if (location.coordinates) {
@@ -151,6 +152,7 @@ router.put('/property/:id', async (req, res) => {
                         country: location.country || 'Philippines',
                         region: location.region || null,
                         zipCode: location.zipCode || null,
+                        boundaries: location.boundaries || null,
                     },
                     update: {
                         address: location.address,
@@ -160,6 +162,7 @@ router.put('/property/:id', async (req, res) => {
                         country: location.country || 'Philippines',
                         region: location.region,
                         zipCode: location.zipCode,
+                        boundaries: location.boundaries || null,
                     }
                 }
             };
