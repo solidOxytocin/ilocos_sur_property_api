@@ -21,6 +21,7 @@ export interface Location {
   country: string;
   zipCode?: string;
   coordinates?: Coordinate;
+  boundaries?: Coordinate[];
 }
 
 export interface Media {
@@ -100,6 +101,12 @@ export const mockProperties: Property[] = [
       province: "Ilocos Sur",
       country: "Philippines",
       coordinates: { lat: 17.5747, lng: 120.3869 },
+      boundaries: [
+        { lat: 17.5742, lng: 120.3864 },
+        { lat: 17.5742, lng: 120.3874 },
+        { lat: 17.5752, lng: 120.3874 },
+        { lat: 17.5752, lng: 120.3864 },
+      ]
     },
     media: [
       m(101, LOT_IMGS[0], true),
@@ -132,6 +139,12 @@ export const mockProperties: Property[] = [
       province: "Ilocos Sur",
       country: "Philippines",
       coordinates: { lat: 17.5990, lng: 120.3912 },
+      boundaries: [
+        { lat: 17.5985, lng: 120.3907 },
+        { lat: 17.5985, lng: 120.3917 },
+        { lat: 17.5995, lng: 120.3917 },
+        { lat: 17.5995, lng: 120.3907 },
+      ]
     },
     media: [
       m(201, LOT_IMGS[2], true),
@@ -162,6 +175,12 @@ export const mockProperties: Property[] = [
       province: "Ilocos Sur",
       country: "Philippines",
       coordinates: { lat: 17.5729, lng: 120.3871 },
+      boundaries: [
+        { lat: 17.5724, lng: 120.3866 },
+        { lat: 17.5724, lng: 120.3876 },
+        { lat: 17.5734, lng: 120.3876 },
+        { lat: 17.5734, lng: 120.3866 },
+      ]
     },
     media: [
       m(301, HOUSE_IMGS[0], true),
@@ -199,6 +218,12 @@ export const mockProperties: Property[] = [
       province: "Ilocos Sur",
       country: "Philippines",
       coordinates: { lat: 17.5750, lng: 120.3867 },
+      boundaries: [
+        { lat: 17.5745, lng: 120.3862 },
+        { lat: 17.5745, lng: 120.3872 },
+        { lat: 17.5755, lng: 120.3872 },
+        { lat: 17.5755, lng: 120.3862 },
+      ]
     },
     media: [
       m(401, CONDO_IMGS[0], true),
@@ -232,6 +257,12 @@ export const mockProperties: Property[] = [
       province: "Ilocos Sur",
       country: "Philippines",
       coordinates: { lat: 17.5935, lng: 120.3858 },
+      boundaries: [
+        { lat: 17.5930, lng: 120.3853 },
+        { lat: 17.5930, lng: 120.3863 },
+        { lat: 17.5940, lng: 120.3863 },
+        { lat: 17.5940, lng: 120.3853 },
+      ]
     },
     media: [m(501, LOT_IMGS[0], true)],
     features: [
@@ -262,6 +293,12 @@ export const mockProperties: Property[] = [
       province: "Ilocos Sur",
       country: "Philippines",
       coordinates: { lat: 17.6811, lng: 120.4236 },
+      boundaries: [
+        { lat: 17.6806, lng: 120.4231 },
+        { lat: 17.6806, lng: 120.4241 },
+        { lat: 17.6816, lng: 120.4241 },
+        { lat: 17.6816, lng: 120.4231 },
+      ]
     },
     media: [m(601, LOT_IMGS[1], true)],
     features: [{ name: "Market", key: "store" }],
@@ -289,6 +326,12 @@ export const mockProperties: Property[] = [
       province: "Ilocos Sur",
       country: "Philippines",
       coordinates: { lat: 17.4954, lng: 120.4377 },
+      boundaries: [
+        { lat: 17.4949, lng: 120.4372 },
+        { lat: 17.4949, lng: 120.4382 },
+        { lat: 17.4959, lng: 120.4382 },
+        { lat: 17.4959, lng: 120.4372 },
+      ]
     },
     media: [
       m(701, HOUSE_IMGS[3], true),
@@ -328,6 +371,12 @@ export const mockProperties: Property[] = [
       province: "Ilocos Sur",
       country: "Philippines",
       coordinates: { lat: 17.4187, lng: 120.4680 },
+      boundaries: [
+        { lat: 17.4182, lng: 120.4675 },
+        { lat: 17.4182, lng: 120.4685 },
+        { lat: 17.4192, lng: 120.4685 },
+        { lat: 17.4192, lng: 120.4675 },
+      ]
     },
     media: [
       m(801, COMMERCIAL_IMGS[0], true),
@@ -359,6 +408,12 @@ export const mockProperties: Property[] = [
       province: "Ilocos Sur",
       country: "Philippines",
       coordinates: { lat: 17.1305, lng: 120.4482 },
+      boundaries: [
+        { lat: 17.1300, lng: 120.4477 },
+        { lat: 17.1300, lng: 120.4487 },
+        { lat: 17.1310, lng: 120.4487 },
+        { lat: 17.1310, lng: 120.4477 },
+      ]
     },
     media: [
       m(901, LOT_IMGS[2], true),
@@ -389,6 +444,12 @@ export const mockProperties: Property[] = [
       province: "Ilocos Sur",
       country: "Philippines",
       coordinates: { lat: 17.1959, lng: 120.4484 },
+      boundaries: [
+        { lat: 17.1954, lng: 120.4479 },
+        { lat: 17.1954, lng: 120.4489 },
+        { lat: 17.1964, lng: 120.4489 },
+        { lat: 17.1964, lng: 120.4479 },
+      ]
     },
     media: [m(1001, CONDO_IMGS[2], true)],
     features: [{ name: "School", key: "school" }],
@@ -415,6 +476,12 @@ export const mockProperties: Property[] = [
       province: "Ilocos Sur",
       country: "Philippines",
       coordinates: { lat: 17.8591, lng: 120.4574 },
+      boundaries: [
+        { lat: 17.8586, lng: 120.4569 },
+        { lat: 17.8586, lng: 120.4579 },
+        { lat: 17.8596, lng: 120.4579 },
+        { lat: 17.8596, lng: 120.4569 },
+      ]
     },
     media: [m(1101, LOT_IMGS[0], true)],
     features: [
@@ -442,6 +509,12 @@ export const mockProperties: Property[] = [
       province: "Ilocos Sur",
       country: "Philippines",
       coordinates: { lat: 16.9354, lng: 120.4447 },
+      boundaries: [
+        { lat: 16.9349, lng: 120.4442 },
+        { lat: 16.9349, lng: 120.4452 },
+        { lat: 16.9359, lng: 120.4452 },
+        { lat: 16.9359, lng: 120.4442 },
+      ]
     },
     media: [
       m(1201, HOUSE_IMGS[1], true),
@@ -478,6 +551,12 @@ export const mockProperties: Property[] = [
       province: "Ilocos Sur",
       country: "Philippines",
       coordinates: { lat: 17.7913, lng: 120.4483 },
+      boundaries: [
+        { lat: 17.7908, lng: 120.4478 },
+        { lat: 17.7908, lng: 120.4488 },
+        { lat: 17.7918, lng: 120.4488 },
+        { lat: 17.7918, lng: 120.4478 },
+      ]
     },
     media: [
       m(1301, COMMERCIAL_IMGS[2], true),
@@ -505,6 +584,12 @@ export const mockProperties: Property[] = [
       province: "Ilocos Sur",
       country: "Philippines",
       coordinates: { lat: 17.5422, lng: 120.3970 },
+      boundaries: [
+        { lat: 17.5417, lng: 120.3965 },
+        { lat: 17.5417, lng: 120.3975 },
+        { lat: 17.5427, lng: 120.3975 },
+        { lat: 17.5427, lng: 120.3965 },
+      ]
     },
     media: [
       m(1401, HOUSE_IMGS[4], true),
@@ -541,6 +626,12 @@ export const mockProperties: Property[] = [
       province: "Ilocos Sur",
       country: "Philippines",
       coordinates: { lat: 17.7430, lng: 120.4260 },
+      boundaries: [
+        { lat: 17.7425, lng: 120.4255 },
+        { lat: 17.7425, lng: 120.4265 },
+        { lat: 17.7435, lng: 120.4265 },
+        { lat: 17.7435, lng: 120.4255 },
+      ]
     },
     media: [m(1501, LOT_IMGS[3], true)],
     features: [{ name: "Main Road", key: "road" }],
@@ -565,6 +656,12 @@ export const mockProperties: Property[] = [
       province: "Ilocos Sur",
       country: "Philippines",
       coordinates: { lat: 17.6340, lng: 120.4126 },
+      boundaries: [
+        { lat: 17.6335, lng: 120.4121 },
+        { lat: 17.6335, lng: 120.4131 },
+        { lat: 17.6345, lng: 120.4131 },
+        { lat: 17.6345, lng: 120.4121 },
+      ]
     },
     media: [
       m(1601, CONDO_IMGS[3], true),
@@ -600,6 +697,12 @@ export const mockProperties: Property[] = [
       province: "Ilocos Sur",
       country: "Philippines",
       coordinates: { lat: 17.1990, lng: 120.4480 },
+      boundaries: [
+        { lat: 17.1985, lng: 120.4475 },
+        { lat: 17.1985, lng: 120.4485 },
+        { lat: 17.1995, lng: 120.4485 },
+        { lat: 17.1995, lng: 120.4475 },
+      ]
     },
     media: [
       m(1701, COMMERCIAL_IMGS[1], true),
@@ -634,6 +737,12 @@ export const mockProperties: Property[] = [
       province: "Ilocos Sur",
       country: "Philippines",
       coordinates: { lat: 17.6660, lng: 120.4204 },
+      boundaries: [
+        { lat: 17.6655, lng: 120.4199 },
+        { lat: 17.6655, lng: 120.4209 },
+        { lat: 17.6665, lng: 120.4209 },
+        { lat: 17.6665, lng: 120.4199 },
+      ]
     },
     media: [m(1801, LOT_IMGS[1], true)],
     features: [
@@ -661,6 +770,12 @@ export const mockProperties: Property[] = [
       province: "Ilocos Sur",
       country: "Philippines",
       coordinates: { lat: 17.5748, lng: 120.3918 },
+      boundaries: [
+        { lat: 17.5743, lng: 120.3913 },
+        { lat: 17.5743, lng: 120.3923 },
+        { lat: 17.5753, lng: 120.3923 },
+        { lat: 17.5753, lng: 120.3913 },
+      ]
     },
     media: [
       m(1901, HOUSE_IMGS[0], true),
@@ -703,6 +818,12 @@ export const mockProperties: Property[] = [
       province: "Ilocos Sur",
       country: "Philippines",
       coordinates: { lat: 16.9980, lng: 120.7392 },
+      boundaries: [
+        { lat: 16.9975, lng: 120.7387 },
+        { lat: 16.9975, lng: 120.7397 },
+        { lat: 16.9985, lng: 120.7397 },
+        { lat: 16.9985, lng: 120.7387 },
+      ]
     },
     media: [m(2001, LOT_IMGS[2], true)],
     features: [{ name: "Main Road", key: "road" }],
@@ -727,6 +848,12 @@ export const mockProperties: Property[] = [
       province: "Ilocos Sur",
       country: "Philippines",
       coordinates: { lat: 17.4204, lng: 120.4722 },
+      boundaries: [
+        { lat: 17.4199, lng: 120.4717 },
+        { lat: 17.4199, lng: 120.4727 },
+        { lat: 17.4209, lng: 120.4727 },
+        { lat: 17.4209, lng: 120.4717 },
+      ]
     },
     media: [
       m(2101, COMMERCIAL_IMGS[0], true),
@@ -755,6 +882,12 @@ export const mockProperties: Property[] = [
       province: "Ilocos Sur",
       country: "Philippines",
       coordinates: { lat: 17.6051, lng: 120.4488 },
+      boundaries: [
+        { lat: 17.6046, lng: 120.4483 },
+        { lat: 17.6046, lng: 120.4493 },
+        { lat: 17.6056, lng: 120.4493 },
+        { lat: 17.6056, lng: 120.4483 },
+      ]
     },
     media: [m(2201, LOT_IMGS[0], true)],
     features: [
@@ -782,6 +915,12 @@ export const mockProperties: Property[] = [
       province: "Ilocos Sur",
       country: "Philippines",
       coordinates: { lat: 17.3244, lng: 120.4472 },
+      boundaries: [
+        { lat: 17.3239, lng: 120.4467 },
+        { lat: 17.3239, lng: 120.4477 },
+        { lat: 17.3249, lng: 120.4477 },
+        { lat: 17.3249, lng: 120.4467 },
+      ]
     },
     media: [
       m(2301, HOUSE_IMGS[2], true),
@@ -821,6 +960,12 @@ export const mockProperties: Property[] = [
       province: "Ilocos Sur",
       country: "Philippines",
       coordinates: { lat: 16.9370, lng: 120.4508 },
+      boundaries: [
+        { lat: 16.9365, lng: 120.4503 },
+        { lat: 16.9365, lng: 120.4513 },
+        { lat: 16.9375, lng: 120.4513 },
+        { lat: 16.9375, lng: 120.4503 },
+      ]
     },
     media: [m(2401, COMMERCIAL_IMGS[2], true)],
     features: [{ name: "Main Road", key: "road" }],
@@ -845,6 +990,12 @@ export const mockProperties: Property[] = [
       province: "Ilocos Sur",
       country: "Philippines",
       coordinates: { lat: 17.5970, lng: 120.3870 },
+      boundaries: [
+        { lat: 17.5965, lng: 120.3865 },
+        { lat: 17.5965, lng: 120.3875 },
+        { lat: 17.5975, lng: 120.3875 },
+        { lat: 17.5975, lng: 120.3865 },
+      ]
     },
     media: [
       m(2501, HOUSE_IMGS[5], true),
@@ -881,6 +1032,12 @@ export const mockProperties: Property[] = [
       province: "Ilocos Sur",
       country: "Philippines",
       coordinates: { lat: 17.5745, lng: 120.3860 },
+      boundaries: [
+        { lat: 17.5740, lng: 120.3855 },
+        { lat: 17.5740, lng: 120.3865 },
+        { lat: 17.5750, lng: 120.3865 },
+        { lat: 17.5750, lng: 120.3855 },
+      ]
     },
     media: [
       m(2601, CONDO_IMGS[1], true),
@@ -919,6 +1076,12 @@ export const mockProperties: Property[] = [
       province: "Ilocos Sur",
       country: "Philippines",
       coordinates: { lat: 17.7528, lng: 120.4578 },
+      boundaries: [
+        { lat: 17.7523, lng: 120.4573 },
+        { lat: 17.7523, lng: 120.4583 },
+        { lat: 17.7533, lng: 120.4583 },
+        { lat: 17.7533, lng: 120.4573 },
+      ]
     },
     media: [
       m(2701, LOT_IMGS[2], true),
@@ -949,6 +1112,12 @@ export const mockProperties: Property[] = [
       province: "Ilocos Sur",
       country: "Philippines",
       coordinates: { lat: 17.3625, lng: 120.4610 },
+      boundaries: [
+        { lat: 17.3620, lng: 120.4605 },
+        { lat: 17.3620, lng: 120.4615 },
+        { lat: 17.3630, lng: 120.4615 },
+        { lat: 17.3630, lng: 120.4605 },
+      ]
     },
     media: [
       m(2801, HOUSE_IMGS[1], true),
@@ -985,6 +1154,12 @@ export const mockProperties: Property[] = [
       province: "Ilocos Sur",
       country: "Philippines",
       coordinates: { lat: 17.8215, lng: 120.5021 },
+      boundaries: [
+        { lat: 17.8210, lng: 120.5016 },
+        { lat: 17.8210, lng: 120.5026 },
+        { lat: 17.8220, lng: 120.5026 },
+        { lat: 17.8220, lng: 120.5016 },
+      ]
     },
     media: [m(2901, LOT_IMGS[1], true)],
     features: [
@@ -1012,6 +1187,12 @@ export const mockProperties: Property[] = [
       province: "Ilocos Sur",
       country: "Philippines",
       coordinates: { lat: 17.5730, lng: 120.3869 },
+      boundaries: [
+        { lat: 17.5725, lng: 120.3864 },
+        { lat: 17.5725, lng: 120.3874 },
+        { lat: 17.5735, lng: 120.3874 },
+        { lat: 17.5735, lng: 120.3864 },
+      ]
     },
     media: [
       m(3001, HOUSE_IMGS[0], true),

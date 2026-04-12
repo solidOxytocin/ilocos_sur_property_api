@@ -87,6 +87,7 @@ async function propertySeeding(){
               city: item.location.city,
               province: item.location.province,
               country: item.location.country,
+              boundaries: item.location.boundaries ? (item.location.boundaries as any) : null,
               coordinates: {
                 create:{
                     lng:  item.location.coordinates?.lng ?? 0 ,

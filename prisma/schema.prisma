@@ -51,6 +51,7 @@ model Location{
   region String?
   zipCode String?
   coordinates Coordinate?
+  boundaries Json?
 
   propertyId Int @unique
   property   Property @relation(fields: [propertyId], references: [id], onDelete: Cascade)
