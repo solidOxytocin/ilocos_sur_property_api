@@ -45,7 +45,7 @@ router.get('/getAll', async (req, res) => {
     if (city) {
         if (!where.location) where.location = {};
         if (!where.location.is) where.location.is = {};
-        where.location.is.city = { contains: String(city), mode: 'insensitive' };
+        where.location.is.city = { equals: String(city), mode: 'insensitive' };
     }
 
     if (type) {
