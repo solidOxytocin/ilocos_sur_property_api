@@ -140,4 +140,36 @@ router.get('/getAll', async (req, res) => {
     });
 });
 
-export const propertyRouter = router;
+/**
+ * GET /property/city-counts
+ * Returns the number of properties per city.
+ * Response shape: [{ city: string; count: number }] sorted by count desc.
+ */
+router.get('/city-counts', async (req, res) => {
+  try {
+    // Group Location rows by city and count how many properties each city has
+    const grouped = await prisma.location.groupBy({
+      by: ['city'],
+      _count: {
+        propertyId: true,
+      },
+      orderBy: {
+        _count: {
+          propertyId: 'desc',
+        },
+      },
+    });
+
+    const result = grouped.map((row: any) => ({
+      city: row.city,
+      count: row._count.propertyId,
+    }));
+
+    res.json(result);
+  } catch (e) {
+    console.error('Error fetching city counts:', e);
+    res.status(500).json({ error: 'Failed to fetch city counts' });
+  }
+});
+
+export const propertyRouter = router;
