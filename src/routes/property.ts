@@ -1,6 +1,41 @@
 import { Router } from 'express';
 const router = Router();
 import {prisma} from "../../lib/prisma";
+import cloudinary from "../../config/cloudinary";
+import multer from "multer";
+
+const TEN_MB = 10 * 1024 * 1024;
+const upload = multer({
+    storage: multer.memoryStorage(),
+    limits: { fileSize: TEN_MB },
+});
+
+
+router.post("/upload", upload.single("image"), async (req, res) => {
+  try {
+    const file = req.file;
+
+    if (!file) {
+      return res.status(400).json({ message: "No file uploaded" });
+    }
+
+    const base64 = file.buffer.toString("base64");
+
+    const result = await cloudinary.uploader.upload(
+      `data:${file.mimetype};base64,${base64}`,
+      {
+        folder: "properties",
+      }
+    );
+
+    res.json({
+      url: result.secure_url,
+      public_id: result.public_id,
+    });
+  } catch (err) {
+    res.status(500).json({ error: "Upload failed" });
+  }
+});
 
 
 router.get('/bounds', async (req, res) => {
@@ -172,4 +207,4 @@ router.get('/city-counts', async (req, res) => {
   }
 });
 
-export const propertyRouter = router;
+export const propertyRouter = router;

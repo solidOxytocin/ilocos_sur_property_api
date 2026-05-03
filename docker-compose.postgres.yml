@@ -27,7 +27,12 @@ services:
     ports:
       - "3000:3000"
     environment:
-      - DATABASE_URL:"postgresql://postgres:69MEXT123@postgres:5432/ilocos_sur_property_db?schema=public" 
+      DATABASE_URL: postgresql://postgres:69MEXT123@postgres:5432/ilocos_sur_property_db?schema=public
+      CLOUDINARY_CLOUD_NAME: ${CLOUDINARY_CLOUD_NAME:-}
+      CLOUDINARY_API_KEY: ${CLOUDINARY_API_KEY:-}
+      CLOUDINARY_API_SECRET: ${CLOUDINARY_API_SECRET:-}
+      # Set to true to wipe DB (see seed) and re-seed on every container start — dev only.
+      SEED_ON_START: ${SEED_ON_START:-false}
     networks:
       - prisma-network
     depends_on:

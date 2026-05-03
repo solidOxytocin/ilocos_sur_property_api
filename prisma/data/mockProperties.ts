@@ -80,7 +80,10 @@ const COMMERCIAL_IMGS = [
   "https://www.schonsheck.com/wp-content/uploads/2023/12/Blog-_0003_iStock-1404294992.jpg",
 ];
 
-function m(id: number, url: string, isPrimary = false): Media {
+function m(id: number, url: string | undefined, isPrimary = false): Media {
+  if (url == null || url === "") {
+    throw new Error(`mockProperties: missing image URL for media id ${id}`);
+  }
   return { id, type: "image", url, isPrimary };
 }
 

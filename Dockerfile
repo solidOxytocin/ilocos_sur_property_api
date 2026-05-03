@@ -10,6 +10,8 @@ RUN npx prisma generate
 
 COPY . .
 
+RUN chmod +x scripts/docker-entry.sh
+
 EXPOSE 3000
 
-CMD [ "npm","run","docker:start" ]
+ENTRYPOINT ["/bin/sh", "/app/scripts/docker-entry.sh"]

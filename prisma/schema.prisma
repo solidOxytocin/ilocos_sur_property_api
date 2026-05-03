@@ -88,6 +88,8 @@ model Media{
   type MediaType
   url String
   isPrimary Boolean @default(false)
+  /// Cloudinary `public_id` — used to delete/replace assets in Cloudinary
+  cloudinaryPublicId String?
   propertyId Int 
   property Property @relation(fields: [propertyId], references: [id], onDelete: Cascade)
 

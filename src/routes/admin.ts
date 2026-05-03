@@ -1,8 +1,82 @@
 import { Router } from 'express';
+import multer from 'multer';
 import { prisma } from '../../lib/prisma';
 import { PropertyType, PropertyStatus, MediaType } from '../../generated/prisma/enums';
+import cloudinary from '../../config/cloudinary';
 
 const router = Router();
+
+const TEN_MB = 10 * 1024 * 1024;
+
+const imageUpload = multer({
+    storage: multer.memoryStorage(),
+    limits: { fileSize: TEN_MB },
+    fileFilter: (_req, file, cb) => {
+        if (file.mimetype.startsWith('image/')) {
+            cb(null, true);
+        } else {
+            cb(new Error('Only image files are allowed'));
+        }
+    },
+});
+
+async function safeDestroyCloudinary(publicId: string) {
+    try {
+        await cloudinary.uploader.destroy(publicId);
+    } catch (e) {
+        console.warn('Cloudinary destroy failed for', publicId, e);
+    }
+}
+
+function mediaStillUsed(
+    old: { url: string; cloudinaryPublicId: string | null },
+    newMedia: { url?: string; cloudinaryPublicId?: string | null }[]
+) {
+    return newMedia.some(
+        (n) =>
+            (n.url && n.url === old.url) ||
+            (n.cloudinaryPublicId &&
+                old.cloudinaryPublicId &&
+                n.cloudinaryPublicId === old.cloudinaryPublicId)
+    );
+}
+
+/** POST /admin/media/upload — multiple images (field name `images`), max 10MB each */
+router.post('/media/upload', (req, res, next) => {
+    imageUpload.array('images', 24)(req, res, (err) => {
+        if (err instanceof multer.MulterError) {
+            if (err.code === 'LIMIT_FILE_SIZE') {
+                return res.status(400).json({ error: 'Each image must be 10MB or smaller' });
+            }
+            return res.status(400).json({ error: err.message });
+        }
+        if (err) {
+            return res.status(400).json({ error: String((err as Error).message || err) });
+        }
+        next();
+    });
+}, async (req, res) => {
+    try {
+        const files = req.files as Express.Multer.File[];
+        if (!files?.length) {
+            return res.status(400).json({ error: 'No image files (use form field "images")' });
+        }
+
+        const items: { url: string; cloudinaryPublicId: string }[] = [];
+        for (const file of files) {
+            const base64 = file.buffer.toString('base64');
+            const result = await cloudinary.uploader.upload(`data:${file.mimetype};base64,${base64}`, {
+                folder: 'properties',
+            });
+            items.push({ url: result.secure_url, cloudinaryPublicId: result.public_id });
+        }
+
+        res.json({ items });
+    } catch (error: any) {
+        console.error('Error uploading media:', error);
+        res.status(500).json({ error: error.message || 'Upload failed' });
+    }
+});
 
 // Create a new property
 router.post('/property', async (req, res) => {
@@ -27,8 +101,8 @@ router.post('/property', async (req, res) => {
 
         const data: any = {
             title,
-            type: type ? String(type).toUpperCase() as PropertyType : PropertyType.HOUSE,
-            status: status ? String(status).toUpperCase() as PropertyStatus : PropertyStatus.AVAILABLE,
+            type: type ? (String(type).toUpperCase() as PropertyType) : PropertyType.HOUSE,
+            status: status ? (String(status).toUpperCase() as PropertyStatus) : PropertyStatus.AVAILABLE,
             price: parseFloat(price),
             slug: slug || title.toLowerCase().replace(/\s+/g, '-'),
         };
@@ -51,38 +125,39 @@ router.post('/property', async (req, res) => {
                     region: location.region || null,
                     zipCode: location.zipCode || null,
                     boundaries: location.boundaries || null,
-                }
+                },
             };
             if (location.coordinates) {
-                 data.location.create.coordinates = {
-                     create: {
-                         lat: parseFloat(location.coordinates.lat),
-                         lng: parseFloat(location.coordinates.lng)
-                     }
-                 };
+                data.location.create.coordinates = {
+                    create: {
+                        lat: parseFloat(location.coordinates.lat),
+                        lng: parseFloat(location.coordinates.lng),
+                    },
+                };
             }
         }
 
         if (media && Array.isArray(media)) {
-             data.media = {
-                 create: media.map((m: any) => ({
-                     url: m.url,
-                     type: MediaType.IMAGE,
-                     isPrimary: !!m.isPrimary,
-                 }))
-             };
+            data.media = {
+                create: media.map((m: any) => ({
+                    url: m.url,
+                    type: MediaType.IMAGE,
+                    isPrimary: !!m.isPrimary,
+                    cloudinaryPublicId: m.cloudinaryPublicId || null,
+                })),
+            };
         }
 
         if (features && Array.isArray(features)) {
-             data.features = {
-                 connect: features.map((f: any) => ({ key: f.key }))
-             };
+            data.features = {
+                connect: features.map((f: any) => ({ key: f.key })),
+            };
         }
 
         if (amenities && Array.isArray(amenities)) {
-             data.amenity = {
-                 connect: amenities.map((a: any) => ({ key: a.key }))
-             };
+            data.amenity = {
+                connect: amenities.map((a: any) => ({ key: a.key })),
+            };
         }
 
         const property = await prisma.property.create({
@@ -92,12 +167,12 @@ router.post('/property', async (req, res) => {
                 media: true,
                 features: true,
                 amenity: true,
-            }
+            },
         });
 
         res.status(201).json(property);
     } catch (error: any) {
-        console.error("Error creating property:", error);
+        console.error('Error creating property:', error);
         res.status(500).json({ error: error.message });
     }
 });
@@ -125,7 +200,13 @@ router.put('/property/:id', async (req, res) => {
         } = req.body;
 
         if (media && Array.isArray(media)) {
-             await prisma.media.deleteMany({ where: { propertyId: id } });
+            const oldMedia = await prisma.media.findMany({ where: { propertyId: id } });
+            for (const row of oldMedia) {
+                if (row.cloudinaryPublicId && !mediaStillUsed(row, media)) {
+                    await safeDestroyCloudinary(row.cloudinaryPublicId);
+                }
+            }
+            await prisma.media.deleteMany({ where: { propertyId: id } });
         }
 
         const data: any = {};
@@ -163,53 +244,54 @@ router.put('/property/:id', async (req, res) => {
                         region: location.region,
                         zipCode: location.zipCode,
                         boundaries: location.boundaries || null,
-                    }
-                }
+                    },
+                },
             };
             if (location.coordinates) {
-                 data.location.upsert.create.coordinates = {
-                     create: {
-                         lat: parseFloat(location.coordinates.lat),
-                         lng: parseFloat(location.coordinates.lng)
-                     }
-                 };
-                 data.location.upsert.update.coordinates = {
-                     upsert: {
-                         create: {
-                             lat: parseFloat(location.coordinates.lat),
-                             lng: parseFloat(location.coordinates.lng)
-                         },
-                         update: {
-                             lat: parseFloat(location.coordinates.lat),
-                             lng: parseFloat(location.coordinates.lng)
-                         }
-                     }
-                 };
+                data.location.upsert.create.coordinates = {
+                    create: {
+                        lat: parseFloat(location.coordinates.lat),
+                        lng: parseFloat(location.coordinates.lng),
+                    },
+                };
+                data.location.upsert.update.coordinates = {
+                    upsert: {
+                        create: {
+                            lat: parseFloat(location.coordinates.lat),
+                            lng: parseFloat(location.coordinates.lng),
+                        },
+                        update: {
+                            lat: parseFloat(location.coordinates.lat),
+                            lng: parseFloat(location.coordinates.lng),
+                        },
+                    },
+                };
             }
         }
 
         if (media && Array.isArray(media)) {
-             data.media = {
-                 create: media.map((m: any) => ({
-                     url: m.url,
-                     type: MediaType.IMAGE,
-                     isPrimary: !!m.isPrimary,
-                 }))
-             };
+            data.media = {
+                create: media.map((m: any) => ({
+                    url: m.url,
+                    type: MediaType.IMAGE,
+                    isPrimary: !!m.isPrimary,
+                    cloudinaryPublicId: m.cloudinaryPublicId || null,
+                })),
+            };
         }
 
         if (features && Array.isArray(features)) {
-             data.features = {
-                 set: [],
-                 connect: features.map((f: any) => ({ key: f.key }))
-             };
+            data.features = {
+                set: [],
+                connect: features.map((f: any) => ({ key: f.key })),
+            };
         }
 
         if (amenities && Array.isArray(amenities)) {
-             data.amenity = {
-                 set: [],
-                 connect: amenities.map((a: any) => ({ key: a.key }))
-             };
+            data.amenity = {
+                set: [],
+                connect: amenities.map((a: any) => ({ key: a.key })),
+            };
         }
 
         const property = await prisma.property.update({
@@ -220,12 +302,12 @@ router.put('/property/:id', async (req, res) => {
                 media: true,
                 features: true,
                 amenity: true,
-            }
+            },
         });
 
         res.json(property);
     } catch (error: any) {
-        console.error("Error updating property:", error);
+        console.error('Error updating property:', error);
         res.status(500).json({ error: error.message });
     }
 });
@@ -234,12 +316,18 @@ router.put('/property/:id', async (req, res) => {
 router.delete('/property/:id', async (req, res) => {
     try {
         const id = parseInt(req.params.id);
+        const mediaRows = await prisma.media.findMany({ where: { propertyId: id } });
+        for (const m of mediaRows) {
+            if (m.cloudinaryPublicId) {
+                await safeDestroyCloudinary(m.cloudinaryPublicId);
+            }
+        }
         await prisma.property.delete({
-            where: { id }
+            where: { id },
         });
-        res.json({ success: true, message: "Property deleted" });
+        res.json({ success: true, message: 'Property deleted' });
     } catch (error: any) {
-        console.error("Error deleting property:", error);
+        console.error('Error deleting property:', error);
         res.status(500).json({ error: error.message });
     }
 });
@@ -247,18 +335,27 @@ router.delete('/property/:id', async (req, res) => {
 // Delete multiple properties
 router.post('/property/delete-many', async (req, res) => {
     try {
-        const { ids } = req.body; // Expects { ids: [1, 2, 3] }
+        const { ids } = req.body;
         if (!ids || !Array.isArray(ids)) {
-             return res.status(400).json({ error: 'ids array is required' });
+            return res.status(400).json({ error: 'ids array is required' });
+        }
+        const intIds = ids.map((x: string | number) => parseInt(String(x)));
+        const mediaRows = await prisma.media.findMany({
+            where: { propertyId: { in: intIds }, cloudinaryPublicId: { not: null } },
+        });
+        for (const m of mediaRows) {
+            if (m.cloudinaryPublicId) {
+                await safeDestroyCloudinary(m.cloudinaryPublicId);
+            }
         }
         await prisma.property.deleteMany({
             where: {
-                id: { in: ids.map(id => parseInt(id)) }
-            }
+                id: { in: intIds },
+            },
         });
         res.json({ success: true, message: `${ids.length} properties deleted` });
     } catch (error: any) {
-        console.error("Error deleting properties:", error);
+        console.error('Error deleting properties:', error);
         res.status(500).json({ error: error.message });
     }
 });
