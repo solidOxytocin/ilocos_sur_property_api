@@ -3,8 +3,10 @@ import multer from 'multer';
 import { prisma } from '../../lib/prisma';
 import { PropertyType, PropertyStatus, MediaType } from '../../generated/prisma/enums';
 import cloudinary from '../../config/cloudinary';
+import { requireAdminAuth } from '../middleware/auth';
 
 const router = Router();
+router.use(requireAdminAuth);
 
 const TEN_MB = 10 * 1024 * 1024;
 
@@ -74,7 +76,7 @@ router.post('/media/upload', (req, res, next) => {
         res.json({ items });
     } catch (error: any) {
         console.error('Error uploading media:', error);
-        res.status(500).json({ error: error.message || 'Upload failed' });
+        res.status(500).json({ error: 'Upload failed' });
     }
 });
 
@@ -173,7 +175,7 @@ router.post('/property', async (req, res) => {
         res.status(201).json(property);
     } catch (error: any) {
         console.error('Error creating property:', error);
-        res.status(500).json({ error: error.message });
+        res.status(500).json({ error: 'Failed to create property' });
     }
 });
 
@@ -308,7 +310,7 @@ router.put('/property/:id', async (req, res) => {
         res.json(property);
     } catch (error: any) {
         console.error('Error updating property:', error);
-        res.status(500).json({ error: error.message });
+        res.status(500).json({ error: 'Failed to update property' });
     }
 });
 
@@ -328,7 +330,7 @@ router.delete('/property/:id', async (req, res) => {
         res.json({ success: true, message: 'Property deleted' });
     } catch (error: any) {
         console.error('Error deleting property:', error);
-        res.status(500).json({ error: error.message });
+        res.status(500).json({ error: 'Failed to delete property' });
     }
 });
 
@@ -356,7 +358,7 @@ router.post('/property/delete-many', async (req, res) => {
         res.json({ success: true, message: `${ids.length} properties deleted` });
     } catch (error: any) {
         console.error('Error deleting properties:', error);
-        res.status(500).json({ error: error.message });
+        res.status(500).json({ error: 'Failed to delete properties' });
     }
 });
 

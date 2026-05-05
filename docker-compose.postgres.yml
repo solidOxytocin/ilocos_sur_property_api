@@ -1,18 +1,19 @@
+# Load variables from `.env` in this directory (Docker Compose also substitutes ${VAR} from `.env`).
+# Ensure POSTGRES_* and DATABASE_URL stay in sync when you change the DB password.
+
 version: '3.7'
 services:
   postgres:
     image: postgres:15
     restart: always
-    environment:
-      POSTGRES_USER: postgres
-      POSTGRES_PASSWORD: 69MEXT123
-      POSTGRES_DB: ilocos_sur_property_db  
+    env_file:
+      - .env
     ports:
       - "5432:5432"
     networks:
       - prisma-network
     healthcheck:
-      test: ["CMD-SHELL", "pg_isready -U postgres -d postgres"]
+      test: ["CMD-SHELL", "pg_isready -U $${POSTGRES_USER} -d $${POSTGRES_DB}"]
       interval: 5s
       timeout: 2s
       retries: 20
@@ -24,15 +25,10 @@ services:
         max-file: "3"
   api:
     build: .
+    env_file:
+      - .env
     ports:
-      - "3000:3000"
-    environment:
-      DATABASE_URL: postgresql://postgres:69MEXT123@postgres:5432/ilocos_sur_property_db?schema=public
-      CLOUDINARY_CLOUD_NAME: ${CLOUDINARY_CLOUD_NAME:-}
-      CLOUDINARY_API_KEY: ${CLOUDINARY_API_KEY:-}
-      CLOUDINARY_API_SECRET: ${CLOUDINARY_API_SECRET:-}
-      # Set to true to wipe DB (see seed) and re-seed on every container start — dev only.
-      SEED_ON_START: ${SEED_ON_START:-false}
+      - "${PORT:-3000}:${PORT:-3000}"
     networks:
       - prisma-network
     depends_on:
