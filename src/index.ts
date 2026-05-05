@@ -4,6 +4,15 @@ import cors from "cors";
 import { propertyRouter } from "./routes/property";
 import { adminRouter } from "./routes/admin";
 import { ensureBootstrapAdminUser } from "./bootstrap/admin-user";
+import {
+  adminRateLimiter,
+  globalRateLimiter,
+  haltOnTimedout,
+  helmetMiddleware,
+  hppMiddleware,
+  requestTimeoutMiddleware,
+  uploadRateLimiter,
+} from "./middleware/security";
 
 const app = express();
 const allowedOrigins = (process.env.ALLOWED_ORIGINS ?? "")
@@ -11,7 +20,13 @@ const allowedOrigins = (process.env.ALLOWED_ORIGINS ?? "")
   .map((origin) => origin.trim())
   .filter(Boolean);
 
+app.disable("x-powered-by");
 app.use(express.json({ limit: "1mb" }));
+app.use(helmetMiddleware);
+app.use(globalRateLimiter);
+app.use(hppMiddleware);
+app.use(requestTimeoutMiddleware);
+app.use(haltOnTimedout);
 app.use(
   cors({
     origin: (origin, callback) => {
@@ -25,6 +40,9 @@ app.use(
   })
 );
 
+app.use("/property/upload", uploadRateLimiter);
+app.use("/admin/media/upload", uploadRateLimiter);
+app.use("/admin", adminRateLimiter);
 app.use("/property", propertyRouter);
 app.use("/admin", adminRouter);
 

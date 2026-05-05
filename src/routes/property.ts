@@ -3,11 +3,33 @@ const router = Router();
 import {prisma} from "../../lib/prisma";
 import cloudinary from "../../config/cloudinary";
 import multer from "multer";
+import { z } from "zod";
+import { validateRequest } from "../middleware/validation";
+import { isAllowedImageMimeType, validateUploadedImages } from "../utils/upload-security";
 
-const TEN_MB = 10 * 1024 * 1024;
+const FIVE_MB = 5 * 1024 * 1024;
 const upload = multer({
     storage: multer.memoryStorage(),
-    limits: { fileSize: TEN_MB },
+    limits: { fileSize: FIVE_MB },
+    fileFilter: (_req, file, cb) => {
+      if (isAllowedImageMimeType(file.mimetype)) cb(null, true);
+      else cb(new Error("Only supported image files are allowed"));
+    },
+});
+
+const getAllQuerySchema = z.object({
+  searchQuery: z.string().trim().optional(),
+  type: z.union([z.string(), z.array(z.string())]).optional(),
+  status: z.union([z.string(), z.array(z.string())]).optional(),
+  minPrice: z.coerce.number().finite().nonnegative().optional(),
+  maxPrice: z.coerce.number().finite().nonnegative().optional(),
+  city: z.string().trim().optional(),
+  minArea: z.coerce.number().finite().nonnegative().optional(),
+  maxArea: z.coerce.number().finite().nonnegative().optional(),
+  sortBy: z.enum(["price", "createdAt", "lotArea", "city", "title"]).optional(),
+  sortOrder: z.enum(["asc", "desc"]).optional(),
+  page: z.coerce.number().int().min(1).optional(),
+  limit: z.coerce.number().int().min(1).max(100).optional(),
 });
 
 
@@ -18,6 +40,7 @@ router.post("/upload", upload.single("image"), async (req, res) => {
     if (!file) {
       return res.status(400).json({ message: "No file uploaded" });
     }
+    await validateUploadedImages([file]);
 
     const base64 = file.buffer.toString("base64");
 
@@ -51,7 +74,8 @@ router.get('/bounds', async (req, res) => {
   res.json({ maxLotArea, maxPrice });
 });
 
-router.get('/getAll', async (req, res) => {
+router.get('/getAll', validateRequest({ query: getAllQuerySchema }), async (req, res) => {
+    const parsedQuery = getAllQuerySchema.parse(req.query);
     const {
         searchQuery,
         type,
@@ -63,7 +87,9 @@ router.get('/getAll', async (req, res) => {
         maxArea,
         sortBy,
         sortOrder,
-    } = req.query;
+        page = 1,
+        limit = 12,
+    } = parsedQuery;
 
     const where: any = {};
 
@@ -92,18 +118,16 @@ router.get('/getAll', async (req, res) => {
 
     if (minPrice || maxPrice) {
         where.price = {};
-        if (minPrice) where.price.gte = parseFloat(String(minPrice));
-        if (maxPrice) where.price.lte = parseFloat(String(maxPrice));
+        if (minPrice !== undefined) where.price.gte = minPrice;
+        if (maxPrice !== undefined) where.price.lte = maxPrice;
     }
 
     if (minArea || maxArea) {
         where.lotArea = {};
-        if (minArea) where.lotArea.gte = parseFloat(String(minArea));
-        if (maxArea) where.lotArea.lte = parseFloat(String(maxArea));
+        if (minArea !== undefined) where.lotArea.gte = minArea;
+        if (maxArea !== undefined) where.lotArea.lte = maxArea;
     }
 
-    const page  = Math.max(1, parseInt(String(req.query.page  ?? '1'),  10));
-    const limit = Math.max(1, parseInt(String(req.query.limit ?? '12'), 10));
     const skip  = (page - 1) * limit;
 
     const allowedSortFields = ['price', 'createdAt', 'lotArea', 'city', 'title'];
