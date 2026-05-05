@@ -3,6 +3,7 @@ import express from "express";
 import cors from "cors";
 import { propertyRouter } from "./routes/property";
 import { adminRouter } from "./routes/admin";
+import { ensureBootstrapAdminUser } from "./bootstrap/admin-user";
 
 const app = express();
 const allowedOrigins = (process.env.ALLOWED_ORIGINS ?? "")
@@ -41,6 +42,14 @@ app.use((err: Error, _req: express.Request, res: express.Response, _next: expres
 
 const PORT = process.env.PORT || 3000;
 
-app.listen(PORT, () => {
-  console.log(`Server running on port ${PORT}`);
+async function startServer() {
+  await ensureBootstrapAdminUser();
+  app.listen(PORT, () => {
+    console.log(`Server running on port ${PORT}`);
+  });
+}
+
+startServer().catch((err) => {
+  console.error("Failed to start server:", err);
+  process.exit(1);
 });

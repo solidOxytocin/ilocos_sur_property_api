@@ -95,6 +95,15 @@ model Media{
 
 }
 
+model AdminUser {
+  id           Int      @id @default(autoincrement())
+  username     String   @unique
+  passwordHash String
+  isActive     Boolean  @default(true)
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+}
+
 enum PropertyType{
   LOT
   HOUSE

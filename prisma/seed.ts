@@ -4,6 +4,7 @@ import { PrismaPg } from "@prisma/adapter-pg";
 import { PrismaClient } from "../generated/prisma/client";
 import { PropertyType, PropertyStatus, MediaType } from "../generated/prisma/enums";
 import { mockProperties } from "./data/mockProperties";
+import { hashPassword } from "../src/utils/password";
 import {
     hasCloudinaryConfig,
     seedImageToCloudinary,
@@ -38,6 +39,28 @@ async function clearTableData() {
     await prisma.amenity.deleteMany();
     await prisma.media.deleteMany();
     await prisma.property.deleteMany();
+    await prisma.$executeRaw`DELETE FROM "AdminUser"`;
+}
+
+async function adminUserSeeding() {
+    if(!process.env.ADMIN_BOOTSTRAP_PASSWORD?.trim()){
+        return;
+    }
+    const username = String(process.env.ADMIN_BOOTSTRAP_USERNAME ?? "admin").trim().toLowerCase();
+    const password = process.env.ADMIN_BOOTSTRAP_PASSWORD?.trim();
+    const passwordHash = await hashPassword(password);
+
+    await prisma.$executeRaw`
+        INSERT INTO "AdminUser" ("username", "passwordHash", "isActive", "createdAt", "updatedAt")
+        VALUES (${username}, ${passwordHash}, true, NOW(), NOW())
+        ON CONFLICT ("username")
+        DO UPDATE SET
+          "passwordHash" = EXCLUDED."passwordHash",
+          "isActive" = EXCLUDED."isActive",
+          "updatedAt" = NOW()
+    `;
+
+    console.log(`✅ Admin user seeded (${username})`);
 }
 
 async function featureSeeding() {
@@ -168,6 +191,7 @@ async function propertySeeding() {
 
 async function main() {
     console.log("🌱 Seed Starts");
+    await adminUserSeeding();
     await featureSeeding();
     await amenitySeeding();
     await propertySeeding();

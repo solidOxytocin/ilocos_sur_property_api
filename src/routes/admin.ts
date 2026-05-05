@@ -1,11 +1,74 @@
 import { Router } from 'express';
 import multer from 'multer';
+import jwt from 'jsonwebtoken';
 import { prisma } from '../../lib/prisma';
 import { PropertyType, PropertyStatus, MediaType } from '../../generated/prisma/enums';
 import cloudinary from '../../config/cloudinary';
 import { requireAdminAuth } from '../middleware/auth';
+import { verifyPassword } from '../utils/password';
 
 const router = Router();
+
+router.post('/auth/login', async (req, res) => {
+    const username = String(req.body?.username ?? '').trim().toLowerCase();
+    const password = String(req.body?.password ?? '');
+
+    if (!username || !password) {
+        return res.status(400).json({ error: 'Username and password are required' });
+    }
+
+    const jwtSecret = process.env.ADMIN_JWT_SECRET;
+    const expiresIn = process.env.ADMIN_JWT_EXPIRES_IN ?? '12h';
+
+    if (!jwtSecret) {
+        console.error('Missing ADMIN_JWT_SECRET');
+        return res.status(500).json({ error: 'Server misconfiguration' });
+    }
+
+    const users = await prisma.$queryRaw<{
+        username: string;
+        passwordHash: string;
+        isActive: boolean;
+    }[]>`
+        SELECT "username", "passwordHash", "isActive"
+        FROM "AdminUser"
+        WHERE "username" = ${username}
+        LIMIT 1
+    `;
+
+    const adminUser = users[0];
+
+    if (!adminUser) {
+        return res.status(401).json({ error: 'Invalid credentials' });
+    }
+
+    if (!adminUser.isActive) {
+        return res.status(403).json({ error: 'Account disabled' });
+    }
+
+    const passwordMatches = await verifyPassword(password, adminUser.passwordHash);
+
+    if (!passwordMatches) {
+        return res.status(401).json({ error: 'Invalid credentials' });
+    }
+
+    const accessToken = jwt.sign(
+        { role: 'admin' },
+        jwtSecret,
+        { subject: adminUser.username, expiresIn }
+    );
+
+    const decoded = jwt.decode(accessToken) as { exp?: number } | null;
+    const expiresAt = decoded?.exp ? new Date(decoded.exp * 1000).toISOString() : null;
+
+    return res.json({
+        accessToken,
+        tokenType: 'Bearer',
+        expiresIn,
+        expiresAt,
+    });
+});
+
 router.use(requireAdminAuth);
 
 const TEN_MB = 10 * 1024 * 1024;
