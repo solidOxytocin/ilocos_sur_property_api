@@ -68,13 +68,23 @@ async function featureSeeding() {
 
     await prisma.features.createMany({
         data: [
-            { name: "Main Road", key: "road" },
-            { name: "Hospital", key: "hospital" },
-            { name: "School", key: "school" },
-            { name: "Market", key: "store" },
-            { name: "Beach Spot", key: "beach" },
-            { name: "Mall Nearby", key: "shopping" },
-            { name: "Parking", key: "parking" },
+            // Original
+            { name: "Main Road",       key: "road" },
+            { name: "Hospital",        key: "hospital" },
+            { name: "School",          key: "school" },
+            { name: "Market",          key: "store" },
+            { name: "Beach Spot",      key: "beach" },
+            { name: "Mall Nearby",     key: "shopping" },
+            { name: "Parking",         key: "parking" },
+            // New
+            { name: "Church/Chapel",   key: "church" },
+            { name: "Transport Hub",   key: "transport" },
+            { name: "Nature/Park",     key: "nature" },
+            { name: "Restaurant",      key: "restaurant" },
+            { name: "Gas Station",     key: "gas_station" },
+            { name: "Gated Community", key: "gated" },
+            { name: "Fiber/Internet",  key: "wifi" },
+            { name: "Mountain View",   key: "mountain" },
         ],
         skipDuplicates: true,
     });
@@ -87,10 +97,18 @@ async function amenitySeeding() {
 
     await prisma.amenity.createMany({
         data: [
-            { name: "Swimming Pool", key: "pool" },
-            { name: "Gym", key: "gym" },
-            { name: "24/7 Security", key: "security" },
-            { name: "Elevator", key: "elevator" },
+            // Original
+            { name: "Swimming Pool",   key: "pool" },
+            { name: "Gym",             key: "gym" },
+            { name: "24/7 Security",   key: "security" },
+            { name: "Elevator",        key: "elevator" },
+            // New
+            { name: "CCTV",            key: "cctv" },
+            { name: "Water System",    key: "water" },
+            { name: "Solar Power",     key: "solar" },
+            { name: "Garden/Yard",     key: "garden" },
+            { name: "Balcony",         key: "balcony" },
+            { name: "Covered Parking", key: "covered_parking" },
         ],
         skipDuplicates: true,
     });

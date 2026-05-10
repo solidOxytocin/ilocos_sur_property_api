@@ -21,6 +21,8 @@ const getAllQuerySchema = z.object({
   searchQuery: z.string().trim().optional(),
   type: z.union([z.string(), z.array(z.string())]).optional(),
   status: z.union([z.string(), z.array(z.string())]).optional(),
+  features: z.union([z.string(), z.array(z.string())]).optional(),
+  amenities: z.union([z.string(), z.array(z.string())]).optional(),
   minPrice: z.coerce.number().finite().nonnegative().optional(),
   maxPrice: z.coerce.number().finite().nonnegative().optional(),
   city: z.string().trim().optional(),
@@ -80,6 +82,8 @@ router.get('/getAll', validateRequest({ query: getAllQuerySchema }), async (req,
         searchQuery,
         type,
         status,
+        features,
+        amenities,
         minPrice,
         maxPrice,
         city,
@@ -114,6 +118,28 @@ router.get('/getAll', validateRequest({ query: getAllQuerySchema }), async (req,
     }
     if (status) {
         where.status = { in: String(status).split(',') };
+    }
+
+    if (features) {
+        // AND logic: property must have ALL selected features
+        const featureKeys = String(features).split(',').filter(Boolean);
+        if (featureKeys.length > 0) {
+            where.AND = where.AND || [];
+            where.AND.push(...featureKeys.map((key: string) => ({
+                features: { some: { key } },
+            })));
+        }
+    }
+
+    if (amenities) {
+        // AND logic: property must have ALL selected amenities
+        const amenityKeys = String(amenities).split(',').filter(Boolean);
+        if (amenityKeys.length > 0) {
+            where.AND = where.AND || [];
+            where.AND.push(...amenityKeys.map((key: string) => ({
+                amenity: { some: { key } },
+            })));
+        }
     }
 
     if (minPrice || maxPrice) {
