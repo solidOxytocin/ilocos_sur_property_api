@@ -26,6 +26,7 @@ const getAllQuerySchema = z.object({
   minPrice: z.coerce.number().finite().nonnegative().optional(),
   maxPrice: z.coerce.number().finite().nonnegative().optional(),
   city: z.string().trim().optional(),
+  barangay: z.string().trim().optional(),
   minArea: z.coerce.number().finite().nonnegative().optional(),
   maxArea: z.coerce.number().finite().nonnegative().optional(),
   sortBy: z.enum(["price", "createdAt", "lotArea", "city", "title"]).optional(),
@@ -87,6 +88,7 @@ router.get('/getAll', validateRequest({ query: getAllQuerySchema }), async (req,
         minPrice,
         maxPrice,
         city,
+        barangay,
         minArea,
         maxArea,
         sortBy,
@@ -111,6 +113,12 @@ router.get('/getAll', validateRequest({ query: getAllQuerySchema }), async (req,
         if (!where.location) where.location = {};
         if (!where.location.is) where.location.is = {};
         where.location.is.city = { equals: String(city), mode: 'insensitive' };
+    }
+
+    if (barangay) {
+        if (!where.location) where.location = {};
+        if (!where.location.is) where.location.is = {};
+        where.location.is.barangay = { equals: String(barangay), mode: 'insensitive' };
     }
 
     if (type) {
