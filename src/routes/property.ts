@@ -1,21 +1,8 @@
 import { Router } from 'express';
 const router = Router();
 import {prisma} from "../../lib/prisma";
-import cloudinary from "../../config/cloudinary";
-import multer from "multer";
 import { z } from "zod";
 import { validateRequest } from "../middleware/validation";
-import { isAllowedImageMimeType, validateUploadedImages } from "../utils/upload-security";
-
-const FIVE_MB = 5 * 1024 * 1024;
-const upload = multer({
-    storage: multer.memoryStorage(),
-    limits: { fileSize: FIVE_MB },
-    fileFilter: (_req, file, cb) => {
-      if (isAllowedImageMimeType(file.mimetype)) cb(null, true);
-      else cb(new Error("Only supported image files are allowed"));
-    },
-});
 
 const getAllQuerySchema = z.object({
   searchQuery: z.string().trim().optional(),
@@ -34,35 +21,6 @@ const getAllQuerySchema = z.object({
   page: z.coerce.number().int().min(1).optional(),
   limit: z.coerce.number().int().min(1).max(100).optional(),
 });
-
-
-router.post("/upload", upload.single("image"), async (req, res) => {
-  try {
-    const file = req.file;
-
-    if (!file) {
-      return res.status(400).json({ message: "No file uploaded" });
-    }
-    await validateUploadedImages([file]);
-
-    const base64 = file.buffer.toString("base64");
-
-    const result = await cloudinary.uploader.upload(
-      `data:${file.mimetype};base64,${base64}`,
-      {
-        folder: "properties",
-      }
-    );
-
-    res.json({
-      url: result.secure_url,
-      public_id: result.public_id,
-    });
-  } catch (err) {
-    res.status(500).json({ error: "Upload failed" });
-  }
-});
-
 
 router.get('/bounds', async (req, res) => {
   const result:any[] = await prisma.$queryRaw`

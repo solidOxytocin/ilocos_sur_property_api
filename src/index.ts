@@ -40,7 +40,6 @@ app.use(
   })
 );
 
-app.use("/property/upload", uploadRateLimiter);
 app.use("/admin/media/upload", uploadRateLimiter);
 app.use("/admin", adminRateLimiter);
 app.use("/property", propertyRouter);

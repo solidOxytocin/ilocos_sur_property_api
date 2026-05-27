@@ -179,7 +179,8 @@ Base URL: `http://localhost:3000` (or your deployed host).
 | `GET` | `/property/getAll` | Paginated listings. Query: `searchQuery`, `type`, `status`, `features`, `amenities`, `minPrice`, `maxPrice`, `city`, `barangay`, `minArea`, `maxArea`, `sortBy`, `sortOrder`, `page`, `limit` |
 | `GET` | `/property/bounds` | `{ maxPrice, maxLotArea }` for filter sliders |
 | `GET` | `/property/city-counts` | `[{ city, count }, ...]` sorted by count |
-| `POST` | `/property/upload` | Single public image upload → `{ url, public_id }` (5 MB max) |
+
+Image uploads are admin-only via `POST /admin/media/upload` (Bearer token required).
 
 **`GET /property/getAll` response:**
 
