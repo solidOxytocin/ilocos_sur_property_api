@@ -3,6 +3,7 @@ const router = Router();
 import {prisma} from "../../lib/prisma";
 import { z } from "zod";
 import { validateRequest } from "../middleware/validation";
+import { PropertyStatus } from "../../generated/prisma/enums";
 
 const getAllQuerySchema = z.object({
   searchQuery: z.string().trim().optional(),
@@ -21,6 +22,119 @@ const getAllQuerySchema = z.object({
   page: z.coerce.number().int().min(1).optional(),
   limit: z.coerce.number().int().min(1).max(100).optional(),
 });
+
+const propertyInclude = {
+  features: true,
+  amenity: true,
+  media: true,
+  location: {
+    include: {
+      coordinates: true,
+    },
+  },
+} as const;
+
+function shouldDeprioritizeSold(statusFilter?: string | string[]): boolean {
+  if (!statusFilter) return true;
+  const statuses = String(statusFilter).split(",").map((s) => s.toUpperCase());
+  if (statuses.length === 1 && statuses[0] === PropertyStatus.SOLD) return false;
+  return statuses.includes(PropertyStatus.SOLD);
+}
+
+function splitWhereBySoldStatus(where: Record<string, unknown>) {
+  const { status, ...rest } = where;
+  let statusList: string[] | null = null;
+
+  if (status && typeof status === "object") {
+    const statusObj = status as { in?: string[]; equals?: string };
+    if (Array.isArray(statusObj.in)) statusList = statusObj.in;
+    else if (statusObj.equals) statusList = [statusObj.equals];
+  } else if (typeof status === "string") {
+    statusList = [status];
+  }
+
+  const nonSoldStatuses = statusList ? statusList.filter((s) => s !== PropertyStatus.SOLD) : null;
+  const nonSoldWhere = {
+    ...rest,
+    ...(nonSoldStatuses === null
+      ? { status: { not: PropertyStatus.SOLD } }
+      : nonSoldStatuses.length === 0
+      ? { status: { in: [] as string[] } }
+      : nonSoldStatuses.length === 1
+      ? { status: nonSoldStatuses[0] }
+      : { status: { in: nonSoldStatuses } }),
+  };
+
+  const soldWhere = {
+    ...rest,
+    ...(!statusList || statusList.includes(PropertyStatus.SOLD)
+      ? { status: PropertyStatus.SOLD }
+      : { status: { in: [] as string[] } }),
+  };
+
+  return { nonSoldWhere, soldWhere };
+}
+
+function buildOrderBy(sortField: string, order: "asc" | "desc") {
+  const nullableFields = ["lotArea"];
+  if (sortField === "city") {
+    return { location: { city: order } };
+  }
+  if (nullableFields.includes(sortField)) {
+    return { [sortField]: { sort: order, nulls: "last" as const } };
+  }
+  return { [sortField]: order };
+}
+
+async function fetchPropertiesSoldLast(
+  where: Record<string, unknown>,
+  orderBy: Record<string, unknown>,
+  skip: number,
+  limit: number
+) {
+  const { nonSoldWhere, soldWhere } = splitWhereBySoldStatus(where);
+
+  const [nonSoldCount, soldCount] = await Promise.all([
+    prisma.property.count({ where: nonSoldWhere }),
+    prisma.property.count({ where: soldWhere }),
+  ]);
+
+  const total = nonSoldCount + soldCount;
+  let properties: Awaited<ReturnType<typeof prisma.property.findMany>> = [];
+
+  if (skip < nonSoldCount) {
+    const nonSoldTake = Math.min(limit, nonSoldCount - skip);
+    const nonSold = await prisma.property.findMany({
+      where: nonSoldWhere,
+      skip,
+      take: nonSoldTake,
+      orderBy,
+      include: propertyInclude,
+    });
+    properties = nonSold;
+
+    if (properties.length < limit) {
+      const sold = await prisma.property.findMany({
+        where: soldWhere,
+        skip: 0,
+        take: limit - properties.length,
+        orderBy,
+        include: propertyInclude,
+      });
+      properties = [...properties, ...sold];
+    }
+  } else {
+    properties = await prisma.property.findMany({
+      where: soldWhere,
+      skip: skip - nonSoldCount,
+      take: limit,
+      orderBy,
+      include: propertyInclude,
+    });
+  }
+
+  return { total, properties };
+}
 
 router.get('/bounds', async (req, res) => {
   const result:any[] = await prisma.$queryRaw`
@@ -123,54 +237,30 @@ router.get('/getAll', validateRequest({ query: getAllQuerySchema }), async (req,
     const skip  = (page - 1) * limit;
 
     const allowedSortFields = ['price', 'createdAt', 'lotArea', 'city', 'title'];
-    const nullableFields = ['lotArea'];
 
     const sortField = allowedSortFields.includes(String(sortBy))
     ? String(sortBy)
     : 'createdAt';
 
     const order: 'asc' | 'desc' = sortOrder === 'asc' ? 'asc' : 'desc';
+    const orderBy = buildOrderBy(sortField, order);
 
-    let orderBy;
+    const deprioritizeSold = shouldDeprioritizeSold(status);
 
-    if (sortField === 'city') {
-        orderBy = {
-            location: {
-            city: order,
-            },
-    };
-    } else if (nullableFields.includes(sortField)) {
-        orderBy = {
-            [sortField]: {
-            sort: order,
-            nulls: 'last',
-            },
-        };
-    } else {
-    orderBy = {
-        [sortField]: order,
-    };
-    }
-    const [total, properties] = await Promise.all([
-        prisma.property.count({ where }),
-        prisma.property.findMany({
+    const queryResult = deprioritizeSold
+      ? await fetchPropertiesSoldLast(where, orderBy, skip, limit)
+      : {
+          total: await prisma.property.count({ where }),
+          properties: await prisma.property.findMany({
             where,
             skip,
             take: limit,
-            include: {
-                features: true,
-                amenity: true,
-                media: true,
-                location: {
-                    include: {
-                        coordinates: true
-                    }
-                }
-            },
-            orderBy:orderBy
-            
-        }),
-    ]);
+            include: propertyInclude,
+            orderBy,
+          }),
+        };
+
+    const { total, properties } = queryResult;
 
     const formattedProperties = properties.map((property: any) => {
         // Map Prisma's 'amenity', 'bedRooms', 'bathRooms' to frontend expected keys
