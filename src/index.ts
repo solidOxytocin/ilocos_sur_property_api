@@ -4,6 +4,7 @@ import cors from "cors";
 import { propertyRouter } from "./routes/property";
 import { adminRouter } from "./routes/admin";
 import { ensureBootstrapAdminUser } from "./bootstrap/admin-user";
+import { ensureReferenceData } from "./bootstrap/reference-data";
 import {
   adminRateLimiter,
   globalRateLimiter,
@@ -64,6 +65,7 @@ app.use((err: Error, _req: express.Request, res: express.Response, _next: expres
 const PORT = process.env.PORT || 3000;
 
 async function startServer() {
+  await ensureReferenceData();
   await ensureBootstrapAdminUser();
   app.listen(PORT, () => {
     console.log(`Server running on port ${PORT}`);

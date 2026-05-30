@@ -5,6 +5,7 @@ import { PrismaClient } from "../generated/prisma/client";
 import { PropertyType, PropertyStatus, MediaType } from "../generated/prisma/enums";
 import { mockProperties } from "./data/mockProperties";
 import { hashPassword } from "../src/utils/password";
+import { REFERENCE_AMENITIES, REFERENCE_FEATURES } from "../src/data/reference-data";
 import {
     hasCloudinaryConfig,
     seedImageToCloudinary,
@@ -67,25 +68,7 @@ async function featureSeeding() {
     console.log("⭐ Feature Seeding Start");
 
     await prisma.features.createMany({
-        data: [
-            // Original
-            { name: "Main Road",       key: "road" },
-            { name: "Hospital",        key: "hospital" },
-            { name: "School",          key: "school" },
-            { name: "Market",          key: "store" },
-            { name: "Beach Spot",      key: "beach" },
-            { name: "Mall Nearby",     key: "shopping" },
-            { name: "Parking",         key: "parking" },
-            // New
-            { name: "Church/Chapel",   key: "church" },
-            { name: "Transport Hub",   key: "transport" },
-            { name: "Nature/Park",     key: "nature" },
-            { name: "Restaurant",      key: "restaurant" },
-            { name: "Gas Station",     key: "gas_station" },
-            { name: "Gated Community", key: "gated" },
-            { name: "Fiber/Internet",  key: "wifi" },
-            { name: "Mountain View",   key: "mountain" },
-        ],
+        data: REFERENCE_FEATURES,
         skipDuplicates: true,
     });
 
@@ -96,20 +79,7 @@ async function amenitySeeding() {
     console.log("🏊 Amenity Seeding Start");
 
     await prisma.amenity.createMany({
-        data: [
-            // Original
-            { name: "Swimming Pool",   key: "pool" },
-            { name: "Gym",             key: "gym" },
-            { name: "24/7 Security",   key: "security" },
-            { name: "Elevator",        key: "elevator" },
-            // New
-            { name: "CCTV",            key: "cctv" },
-            { name: "Water System",    key: "water" },
-            { name: "Solar Power",     key: "solar" },
-            { name: "Garden/Yard",     key: "garden" },
-            { name: "Balcony",         key: "balcony" },
-            { name: "Covered Parking", key: "covered_parking" },
-        ],
+        data: REFERENCE_AMENITIES,
         skipDuplicates: true,
     });
 
