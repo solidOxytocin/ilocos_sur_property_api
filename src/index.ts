@@ -15,6 +15,10 @@ import {
 } from "./middleware/security";
 
 const app = express();
+
+// Behind Render's reverse proxy; required so express-rate-limit accepts X-Forwarded-For.
+app.set("trust proxy", 1);
+
 const allowedOrigins = (process.env.ALLOWED_ORIGINS ?? "")
   .split(",")
   .map((origin) => origin.trim())
