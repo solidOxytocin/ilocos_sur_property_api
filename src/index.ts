@@ -3,6 +3,7 @@ import express from "express";
 import cors from "cors";
 import { propertyRouter } from "./routes/property";
 import { adminRouter } from "./routes/admin";
+import { healthRouter } from "./routes/health";
 import { ensureBootstrapAdminUser } from "./bootstrap/admin-user";
 import { ensureReferenceData } from "./bootstrap/reference-data";
 import {
@@ -19,6 +20,9 @@ const app = express();
 
 // Behind Render's reverse proxy; required so express-rate-limit accepts X-Forwarded-For.
 app.set("trust proxy", 1);
+
+// UptimeRobot / load-balancer probes — mounted before rate limiting and auth.
+app.use("/health", healthRouter);
 
 const allowedOrigins = (process.env.ALLOWED_ORIGINS ?? "")
   .split(",")
