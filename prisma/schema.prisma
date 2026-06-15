@@ -106,7 +106,7 @@ model AdminUser {
 
 enum PropertyType{
   LOT
-  HOUSE
+  HOUSE_AND_LOT
   CONDO
   COMMERCIAL
 }

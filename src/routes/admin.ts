@@ -17,7 +17,12 @@ const loginSchema = z.object({
   password: z.string().min(1),
 });
 
-const propertyTypeEnum = z.enum([PropertyType.HOUSE, PropertyType.LOT, PropertyType.CONDO, PropertyType.COMMERCIAL]);
+const propertyTypeEnum = z.enum([
+  PropertyType.HOUSE_AND_LOT,
+  PropertyType.LOT,
+  PropertyType.CONDO,
+  PropertyType.COMMERCIAL,
+]);
 const propertyStatusEnum = z.enum([PropertyStatus.AVAILABLE, PropertyStatus.SOLD, PropertyStatus.RESERVED, PropertyStatus.RENTED]);
 
 const mediaSchema = z.object({
@@ -198,7 +203,7 @@ router.post("/property", validateRequest({ body: createPropertySchema }), async 
   try {
     const {
       title,
-      type = PropertyType.HOUSE,
+      type = PropertyType.HOUSE_AND_LOT,
       status = PropertyStatus.AVAILABLE,
       price,
       lotArea,

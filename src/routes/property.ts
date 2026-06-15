@@ -194,7 +194,10 @@ router.get('/getAll', validateRequest({ query: getAllQuerySchema }), async (req,
     }
 
     if (type) {
-        where.type = { in: String(type).split(',') };
+        const typeValues = String(type)
+            .split(",")
+            .map((t) => (t.toUpperCase() === "HOUSE" ? "HOUSE_AND_LOT" : t.toUpperCase()));
+        where.type = { in: typeValues };
     }
     if (status) {
         where.status = { in: String(status).split(',') };
