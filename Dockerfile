@@ -10,7 +10,7 @@ RUN npx prisma generate
 
 COPY . .
 
-RUN chmod +x scripts/docker-entry.sh
+RUN sed -i 's/\r$//' scripts/docker-entry.sh && chmod +x scripts/docker-entry.sh
 
 EXPOSE 3000
 

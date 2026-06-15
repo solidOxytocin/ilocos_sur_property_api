@@ -12,6 +12,14 @@ import {
     destroyCloudinaryPublicId,
 } from "./seedCloudinary";
 
+function toPropertyType(type: string): PropertyType {
+    const normalized = type.toLowerCase().replace(/-/g, "_");
+    if (normalized === "house" || normalized === "house_and_lot") {
+        return PropertyType.HOUSE_AND_LOT;
+    }
+    return normalized.toUpperCase() as PropertyType;
+}
+
 const connectionString = process.env.DATABASE_URL;
 const pool = new Pool({ connectionString });
 const adapter = new PrismaPg({ connectionString });
@@ -122,7 +130,7 @@ async function propertySeeding() {
         await prisma.property.create({
             data: {
                 title: item.title,
-                type: item.type.toUpperCase() as PropertyType,
+                type: toPropertyType(item.type),
                 status: item.status.toUpperCase() as PropertyStatus,
                 price: item.price,
                 lotArea: item.lotArea ?? null,
