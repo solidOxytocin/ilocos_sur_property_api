@@ -1,0 +1,2509 @@
+{
+  "generatedAt": "2026-06-15T12:54:25.786Z",
+  "version": 1,
+  "photosDir": "camella-photos",
+  "listingCount": 52,
+  "notes": [
+    "Fill price and floorArea from computation sheets before seeding.",
+    "Do not publish sourceSheet paths or block/lot data from filenames.",
+    "heroImage paths are relative to ilocos_sur_property_api root."
+  ],
+  "listings": [
+    {
+      "key": "camella-bantay-lot-only-lot-110-lot-only-110sqm-camella-bantay",
+      "title": "110 sqm Lot — Camella Bantay",
+      "type": "LOT",
+      "status": "AVAILABLE",
+      "price": 4813000,
+      "lotArea": 110,
+      "floorArea": null,
+      "bedRooms": null,
+      "bathRooms": null,
+      "parking": null,
+      "details": "110 sqm lot for sale in Camella Bantay, Bantay, Ilocos Sur. Gated Camella community.",
+      "slug": "lot-camella-bantay-lot-only-110sqm",
+      "subdivision": "Camella Bantay",
+      "city": "Bantay",
+      "province": "Ilocos Sur",
+      "country": "Philippines",
+      "region": "Region I",
+      "category": "LOT_ONLY",
+      "model": null,
+      "location": {
+        "address": "Camella Bantay",
+        "barangay": "",
+        "city": "Bantay",
+        "province": "Ilocos Sur",
+        "country": "Philippines",
+        "region": "Region I",
+        "zipCode": null,
+        "coordinates": {
+          "lat": 17.5847,
+          "lng": 120.3892
+        },
+        "boundaries": null
+      },
+      "heroImage": "camella-photos/_cropped/Lot only 110sqm Camella Bantay_photo.jpg",
+      "sourceSheet": "camella-photos/Camella Bantay/Lot Only/Lot only 110sqm Camella Bantay.png",
+      "features": [
+        "gated",
+        "road"
+      ],
+      "amenities": [
+        "security"
+      ],
+      "_meta": {
+        "categoryFolder": "Lot Only",
+        "sourceFileName": "Lot only 110sqm Camella Bantay.png"
+      }
+    },
+    {
+      "key": "camella-bantay-lot-only-lot-113-lot-only-113sqm-camella-bantay",
+      "title": "113 sqm Lot — Camella Bantay",
+      "type": "LOT",
+      "status": "AVAILABLE",
+      "price": 4944000,
+      "lotArea": 113,
+      "floorArea": null,
+      "bedRooms": null,
+      "bathRooms": null,
+      "parking": null,
+      "details": "113 sqm lot for sale in Camella Bantay, Bantay, Ilocos Sur. Gated Camella community.",
+      "slug": "lot-camella-bantay-lot-only-113sqm",
+      "subdivision": "Camella Bantay",
+      "city": "Bantay",
+      "province": "Ilocos Sur",
+      "country": "Philippines",
+      "region": "Region I",
+      "category": "LOT_ONLY",
+      "model": null,
+      "location": {
+        "address": "Camella Bantay",
+        "barangay": "",
+        "city": "Bantay",
+        "province": "Ilocos Sur",
+        "country": "Philippines",
+        "region": "Region I",
+        "zipCode": null,
+        "coordinates": {
+          "lat": 17.5847,
+          "lng": 120.3892
+        },
+        "boundaries": null
+      },
+      "heroImage": "camella-photos/_cropped/Lot only 113sqm Camella Bantay_photo.jpg",
+      "sourceSheet": "camella-photos/Camella Bantay/Lot Only/Lot only 113sqm Camella Bantay.png",
+      "features": [
+        "gated",
+        "road"
+      ],
+      "amenities": [
+        "security"
+      ],
+      "_meta": {
+        "categoryFolder": "Lot Only",
+        "sourceFileName": "Lot only 113sqm Camella Bantay.png"
+      }
+    },
+    {
+      "key": "camella-bantay-lot-only-lot-117-lot-only-117-sqm-camella-bantay",
+      "title": "117 sqm Lot — Camella Bantay",
+      "type": "LOT",
+      "status": "AVAILABLE",
+      "price": 5265000,
+      "lotArea": 117,
+      "floorArea": null,
+      "bedRooms": null,
+      "bathRooms": null,
+      "parking": null,
+      "details": "117 sqm lot for sale in Camella Bantay, Bantay, Ilocos Sur. Gated Camella community.",
+      "slug": "lot-camella-bantay-lot-only-117sqm",
+      "subdivision": "Camella Bantay",
+      "city": "Bantay",
+      "province": "Ilocos Sur",
+      "country": "Philippines",
+      "region": "Region I",
+      "category": "LOT_ONLY",
+      "model": null,
+      "location": {
+        "address": "Camella Bantay",
+        "barangay": "",
+        "city": "Bantay",
+        "province": "Ilocos Sur",
+        "country": "Philippines",
+        "region": "Region I",
+        "zipCode": null,
+        "coordinates": {
+          "lat": 17.5847,
+          "lng": 120.3892
+        },
+        "boundaries": null
+      },
+      "heroImage": "camella-photos/_cropped/Lot only 117 sqm Camella Bantay_photo.jpg",
+      "sourceSheet": "camella-photos/Camella Bantay/Lot Only/Lot only 117 sqm Camella Bantay.png",
+      "features": [
+        "gated",
+        "road"
+      ],
+      "amenities": [
+        "security"
+      ],
+      "_meta": {
+        "categoryFolder": "Lot Only",
+        "sourceFileName": "Lot only 117 sqm Camella Bantay.png"
+      }
+    },
+    {
+      "key": "camella-bantay-lot-only-lot-121-lot-only-121sqm-camella-bantay",
+      "title": "121 sqm Lot — Camella Bantay",
+      "type": "LOT",
+      "status": "AVAILABLE",
+      "price": 5445000,
+      "lotArea": 121,
+      "floorArea": null,
+      "bedRooms": null,
+      "bathRooms": null,
+      "parking": null,
+      "details": "121 sqm lot for sale in Camella Bantay, Bantay, Ilocos Sur. Gated Camella community.",
+      "slug": "lot-camella-bantay-lot-only-121sqm",
+      "subdivision": "Camella Bantay",
+      "city": "Bantay",
+      "province": "Ilocos Sur",
+      "country": "Philippines",
+      "region": "Region I",
+      "category": "LOT_ONLY",
+      "model": null,
+      "location": {
+        "address": "Camella Bantay",
+        "barangay": "",
+        "city": "Bantay",
+        "province": "Ilocos Sur",
+        "country": "Philippines",
+        "region": "Region I",
+        "zipCode": null,
+        "coordinates": {
+          "lat": 17.5847,
+          "lng": 120.3892
+        },
+        "boundaries": null
+      },
+      "heroImage": "camella-photos/_cropped/Lot only 121sqm Camella Bantay_photo.jpg",
+      "sourceSheet": "camella-photos/Camella Bantay/Lot Only/Lot only 121sqm Camella Bantay.png",
+      "features": [
+        "gated",
+        "road"
+      ],
+      "amenities": [
+        "security"
+      ],
+      "_meta": {
+        "categoryFolder": "Lot Only",
+        "sourceFileName": "Lot only 121sqm Camella Bantay.png"
+      }
+    },
+    {
+      "key": "camella-bantay-lot-only-lot-137-lot-only-137sqm-camella-bantay",
+      "title": "137 sqm Lot — Camella Bantay",
+      "type": "LOT",
+      "status": "AVAILABLE",
+      "price": 5994000,
+      "lotArea": 137,
+      "floorArea": null,
+      "bedRooms": null,
+      "bathRooms": null,
+      "parking": null,
+      "details": "137 sqm lot for sale in Camella Bantay, Bantay, Ilocos Sur. Gated Camella community.",
+      "slug": "lot-camella-bantay-lot-only-137sqm",
+      "subdivision": "Camella Bantay",
+      "city": "Bantay",
+      "province": "Ilocos Sur",
+      "country": "Philippines",
+      "region": "Region I",
+      "category": "LOT_ONLY",
+      "model": null,
+      "location": {
+        "address": "Camella Bantay",
+        "barangay": "",
+        "city": "Bantay",
+        "province": "Ilocos Sur",
+        "country": "Philippines",
+        "region": "Region I",
+        "zipCode": null,
+        "coordinates": {
+          "lat": 17.5847,
+          "lng": 120.3892
+        },
+        "boundaries": null
+      },
+      "heroImage": "camella-photos/_cropped/Lot only 137sqm Camella Bantay_photo.jpg",
+      "sourceSheet": "camella-photos/Camella Bantay/Lot Only/Lot only 137sqm Camella Bantay.png",
+      "features": [
+        "gated",
+        "road"
+      ],
+      "amenities": [
+        "security"
+      ],
+      "_meta": {
+        "categoryFolder": "Lot Only",
+        "sourceFileName": "Lot only 137sqm Camella Bantay.png"
+      }
+    },
+    {
+      "key": "camella-bantay-lot-only-lot-244-lot-only-244sqm-camella-bantay",
+      "title": "244 sqm Lot — Camella Bantay",
+      "type": "LOT",
+      "status": "AVAILABLE",
+      "price": 10980000,
+      "lotArea": 244,
+      "floorArea": null,
+      "bedRooms": null,
+      "bathRooms": null,
+      "parking": null,
+      "details": "244 sqm lot for sale in Camella Bantay, Bantay, Ilocos Sur. Gated Camella community.",
+      "slug": "lot-camella-bantay-lot-only-244sqm",
+      "subdivision": "Camella Bantay",
+      "city": "Bantay",
+      "province": "Ilocos Sur",
+      "country": "Philippines",
+      "region": "Region I",
+      "category": "LOT_ONLY",
+      "model": null,
+      "location": {
+        "address": "Camella Bantay",
+        "barangay": "",
+        "city": "Bantay",
+        "province": "Ilocos Sur",
+        "country": "Philippines",
+        "region": "Region I",
+        "zipCode": null,
+        "coordinates": {
+          "lat": 17.5847,
+          "lng": 120.3892
+        },
+        "boundaries": null
+      },
+      "heroImage": "camella-photos/_cropped/Lot only 244sqm Camella Bantay_photo.jpg",
+      "sourceSheet": "camella-photos/Camella Bantay/Lot Only/Lot only 244sqm Camella Bantay.png",
+      "features": [
+        "gated",
+        "road"
+      ],
+      "amenities": [
+        "security"
+      ],
+      "_meta": {
+        "categoryFolder": "Lot Only",
+        "sourceFileName": "Lot only 244sqm Camella Bantay.png"
+      }
+    },
+    {
+      "key": "camella-bantay-lot-only-lot-72-lot-only-72-sqm-camella-bantay",
+      "title": "72 sqm Lot — Camella Bantay",
+      "type": "LOT",
+      "status": "AVAILABLE",
+      "price": 3150000,
+      "lotArea": 72,
+      "floorArea": null,
+      "bedRooms": null,
+      "bathRooms": null,
+      "parking": null,
+      "details": "72 sqm lot for sale in Camella Bantay, Bantay, Ilocos Sur. Gated Camella community.",
+      "slug": "lot-camella-bantay-lot-only-72sqm",
+      "subdivision": "Camella Bantay",
+      "city": "Bantay",
+      "province": "Ilocos Sur",
+      "country": "Philippines",
+      "region": "Region I",
+      "category": "LOT_ONLY",
+      "model": null,
+      "location": {
+        "address": "Camella Bantay",
+        "barangay": "",
+        "city": "Bantay",
+        "province": "Ilocos Sur",
+        "country": "Philippines",
+        "region": "Region I",
+        "zipCode": null,
+        "coordinates": {
+          "lat": 17.5847,
+          "lng": 120.3892
+        },
+        "boundaries": null
+      },
+      "heroImage": "camella-photos/_cropped/Lot only 72 sqm Camella Bantay_photo.jpg",
+      "sourceSheet": "camella-photos/Camella Bantay/Lot Only/Lot only 72 sqm Camella Bantay.png",
+      "features": [
+        "gated",
+        "road"
+      ],
+      "amenities": [
+        "security"
+      ],
+      "_meta": {
+        "categoryFolder": "Lot Only",
+        "sourceFileName": "Lot only 72 sqm Camella Bantay.png"
+      }
+    },
+    {
+      "key": "camella-bantay-lot-only-lot-99-lot-only-99sqm-camella-bantay",
+      "title": "99 sqm Lot — Camella Bantay",
+      "type": "LOT",
+      "status": "AVAILABLE",
+      "price": 4332000,
+      "lotArea": 99,
+      "floorArea": null,
+      "bedRooms": null,
+      "bathRooms": null,
+      "parking": null,
+      "details": "99 sqm lot for sale in Camella Bantay, Bantay, Ilocos Sur. Gated Camella community.",
+      "slug": "lot-camella-bantay-lot-only-99sqm",
+      "subdivision": "Camella Bantay",
+      "city": "Bantay",
+      "province": "Ilocos Sur",
+      "country": "Philippines",
+      "region": "Region I",
+      "category": "LOT_ONLY",
+      "model": null,
+      "location": {
+        "address": "Camella Bantay",
+        "barangay": "",
+        "city": "Bantay",
+        "province": "Ilocos Sur",
+        "country": "Philippines",
+        "region": "Region I",
+        "zipCode": null,
+        "coordinates": {
+          "lat": 17.5847,
+          "lng": 120.3892
+        },
+        "boundaries": null
+      },
+      "heroImage": "camella-photos/_cropped/Lot only 99sqm Camella Bantay_photo.jpg",
+      "sourceSheet": "camella-photos/Camella Bantay/Lot Only/Lot only 99sqm Camella Bantay.png",
+      "features": [
+        "gated",
+        "road"
+      ],
+      "amenities": [
+        "security"
+      ],
+      "_meta": {
+        "categoryFolder": "Lot Only",
+        "sourceFileName": "Lot only 99sqm Camella Bantay.png"
+      }
+    },
+    {
+      "key": "camella-bantay-nrfo-cara-cb-na-cara-cb-nrfo-camella-bantay",
+      "title": "Cara CB — Camella Bantay (NRFO)",
+      "type": "HOUSE_AND_LOT",
+      "status": "AVAILABLE",
+      "price": 14292000,
+      "lotArea": 244,
+      "floorArea": 66,
+      "bedRooms": null,
+      "bathRooms": null,
+      "parking": null,
+      "details": "NRFO house and lot in Camella Bantay, Bantay. Model: Cara CB. Contact us for updated pricing and availability.",
+      "slug": "cara-cb-camella-bantay-nrfo",
+      "subdivision": "Camella Bantay",
+      "city": "Bantay",
+      "province": "Ilocos Sur",
+      "country": "Philippines",
+      "region": "Region I",
+      "category": "NRFO",
+      "model": "Cara CB",
+      "location": {
+        "address": "Camella Bantay",
+        "barangay": "",
+        "city": "Bantay",
+        "province": "Ilocos Sur",
+        "country": "Philippines",
+        "region": "Region I",
+        "zipCode": null,
+        "coordinates": {
+          "lat": 17.5847,
+          "lng": 120.3892
+        },
+        "boundaries": null
+      },
+      "heroImage": "camella-photos/_cropped/Cara CB NRFO Camella Bantay_photo.jpg",
+      "sourceSheet": "camella-photos/Camella Bantay/NRFO - 15_ in 18 mos/Cara CB NRFO Camella Bantay.png",
+      "features": [
+        "gated",
+        "road"
+      ],
+      "amenities": [
+        "security"
+      ],
+      "_meta": {
+        "categoryFolder": "NRFO - 15_ in 18 mos",
+        "sourceFileName": "Cara CB NRFO Camella Bantay.png"
+      }
+    },
+    {
+      "key": "camella-bantay-nrfo-criselle-72-criselle-72sqm-camella-bantay",
+      "title": "Criselle, 72 sqm lot — Camella Bantay (NRFO)",
+      "type": "HOUSE_AND_LOT",
+      "status": "AVAILABLE",
+      "price": 6245000,
+      "lotArea": 72,
+      "floorArea": 40,
+      "bedRooms": null,
+      "bathRooms": null,
+      "parking": null,
+      "details": "NRFO house and lot in Camella Bantay, Bantay. Model: Criselle. 72 sqm lot. Contact us for updated pricing and availability.",
+      "slug": "criselle-camella-bantay-nrfo-72sqm",
+      "subdivision": "Camella Bantay",
+      "city": "Bantay",
+      "province": "Ilocos Sur",
+      "country": "Philippines",
+      "region": "Region I",
+      "category": "NRFO",
+      "model": "Criselle",
+      "location": {
+        "address": "Camella Bantay",
+        "barangay": "",
+        "city": "Bantay",
+        "province": "Ilocos Sur",
+        "country": "Philippines",
+        "region": "Region I",
+        "zipCode": null,
+        "coordinates": {
+          "lat": 17.5847,
+          "lng": 120.3892
+        },
+        "boundaries": null
+      },
+      "heroImage": "camella-photos/_cropped/CRISELLE 72SQM CAMELLA BANTAY_photo.jpg",
+      "sourceSheet": "camella-photos/Camella Bantay/NRFO - 15_ in 18 mos/CRISELLE 72SQM CAMELLA BANTAY.png",
+      "features": [
+        "gated",
+        "road"
+      ],
+      "amenities": [
+        "security"
+      ],
+      "_meta": {
+        "categoryFolder": "NRFO - 15_ in 18 mos",
+        "sourceFileName": "CRISELLE 72SQM CAMELLA BANTAY.png"
+      }
+    },
+    {
+      "key": "camella-bantay-nrfo-dana-cb-na-dana-cb-nrfo-camella-bantay",
+      "title": "Dana CB — Camella Bantay (NRFO)",
+      "type": "HOUSE_AND_LOT",
+      "status": "AVAILABLE",
+      "price": 15312000,
+      "lotArea": 244,
+      "floorArea": 72,
+      "bedRooms": null,
+      "bathRooms": null,
+      "parking": null,
+      "details": "NRFO house and lot in Camella Bantay, Bantay. Model: Dana CB. Contact us for updated pricing and availability.",
+      "slug": "dana-cb-camella-bantay-nrfo",
+      "subdivision": "Camella Bantay",
+      "city": "Bantay",
+      "province": "Ilocos Sur",
+      "country": "Philippines",
+      "region": "Region I",
+      "category": "NRFO",
+      "model": "Dana CB",
+      "location": {
+        "address": "Camella Bantay",
+        "barangay": "",
+        "city": "Bantay",
+        "province": "Ilocos Sur",
+        "country": "Philippines",
+        "region": "Region I",
+        "zipCode": null,
+        "coordinates": {
+          "lat": 17.5847,
+          "lng": 120.3892
+        },
+        "boundaries": null
+      },
+      "heroImage": "camella-photos/_cropped/Dana CB NRFO Camella Bantay_photo.jpg",
+      "sourceSheet": "camella-photos/Camella Bantay/NRFO - 15_ in 18 mos/Dana CB NRFO Camella Bantay.png",
+      "features": [
+        "gated",
+        "road"
+      ],
+      "amenities": [
+        "security"
+      ],
+      "_meta": {
+        "categoryFolder": "NRFO - 15_ in 18 mos",
+        "sourceFileName": "Dana CB NRFO Camella Bantay.png"
+      }
+    },
+    {
+      "key": "camella-bantay-nrfo-ella-cb-na-ella-cb-nrfo-camella-bantay",
+      "title": "Ella CB — Camella Bantay (NRFO)",
+      "type": "HOUSE_AND_LOT",
+      "status": "AVAILABLE",
+      "price": 15838000,
+      "lotArea": 244,
+      "floorArea": 100,
+      "bedRooms": null,
+      "bathRooms": null,
+      "parking": null,
+      "details": "NRFO house and lot in Camella Bantay, Bantay. Model: Ella CB. Contact us for updated pricing and availability.",
+      "slug": "ella-cb-camella-bantay-nrfo",
+      "subdivision": "Camella Bantay",
+      "city": "Bantay",
+      "province": "Ilocos Sur",
+      "country": "Philippines",
+      "region": "Region I",
+      "category": "NRFO",
+      "model": "Ella CB",
+      "location": {
+        "address": "Camella Bantay",
+        "barangay": "",
+        "city": "Bantay",
+        "province": "Ilocos Sur",
+        "country": "Philippines",
+        "region": "Region I",
+        "zipCode": null,
+        "coordinates": {
+          "lat": 17.5847,
+          "lng": 120.3892
+        },
+        "boundaries": null
+      },
+      "heroImage": "camella-photos/_cropped/Ella CB NRFO Camella Bantay_photo.jpg",
+      "sourceSheet": "camella-photos/Camella Bantay/NRFO - 15_ in 18 mos/Ella CB NRFO Camella Bantay.png",
+      "features": [
+        "gated",
+        "road"
+      ],
+      "amenities": [
+        "security"
+      ],
+      "_meta": {
+        "categoryFolder": "NRFO - 15_ in 18 mos",
+        "sourceFileName": "Ella CB NRFO Camella Bantay.png"
+      }
+    },
+    {
+      "key": "camella-bantay-nrfo-ezabelle-72-ezabelle-72sqm-camella-bantay",
+      "title": "Ezabelle, 72 sqm lot — Camella Bantay (NRFO)",
+      "type": "HOUSE_AND_LOT",
+      "status": "AVAILABLE",
+      "price": 4995000,
+      "lotArea": 72,
+      "floorArea": 46,
+      "bedRooms": null,
+      "bathRooms": null,
+      "parking": null,
+      "details": "NRFO house and lot in Camella Bantay, Bantay. Model: Ezabelle. 72 sqm lot. Contact us for updated pricing and availability.",
+      "slug": "ezabelle-camella-bantay-nrfo-72sqm",
+      "subdivision": "Camella Bantay",
+      "city": "Bantay",
+      "province": "Ilocos Sur",
+      "country": "Philippines",
+      "region": "Region I",
+      "category": "NRFO",
+      "model": "Ezabelle",
+      "location": {
+        "address": "Camella Bantay",
+        "barangay": "",
+        "city": "Bantay",
+        "province": "Ilocos Sur",
+        "country": "Philippines",
+        "region": "Region I",
+        "zipCode": null,
+        "coordinates": {
+          "lat": 17.5847,
+          "lng": 120.3892
+        },
+        "boundaries": null
+      },
+      "heroImage": "camella-photos/_cropped/EZABELLE 72SQM CAMELLA BANTAY_photo.jpg",
+      "sourceSheet": "camella-photos/Camella Bantay/NRFO - 15_ in 18 mos/EZABELLE 72SQM CAMELLA BANTAY.png",
+      "features": [
+        "gated",
+        "road"
+      ],
+      "amenities": [
+        "security"
+      ],
+      "_meta": {
+        "categoryFolder": "NRFO - 15_ in 18 mos",
+        "sourceFileName": "EZABELLE 72SQM CAMELLA BANTAY.png"
+      }
+    },
+    {
+      "key": "camella-bantay-rfo-carina-na-carina-rfo-camella-bantay-new",
+      "title": "Carina — Camella Bantay (RFO)",
+      "type": "HOUSE_AND_LOT",
+      "status": "AVAILABLE",
+      "price": 10088000,
+      "lotArea": 121,
+      "floorArea": 72,
+      "bedRooms": null,
+      "bathRooms": null,
+      "parking": null,
+      "details": "RFO house and lot in Camella Bantay, Bantay. Model: Carina. Contact us for updated pricing and availability.",
+      "slug": "carina-camella-bantay-rfo",
+      "subdivision": "Camella Bantay",
+      "city": "Bantay",
+      "province": "Ilocos Sur",
+      "country": "Philippines",
+      "region": "Region I",
+      "category": "RFO",
+      "model": "Carina",
+      "location": {
+        "address": "Camella Bantay",
+        "barangay": "",
+        "city": "Bantay",
+        "province": "Ilocos Sur",
+        "country": "Philippines",
+        "region": "Region I",
+        "zipCode": null,
+        "coordinates": {
+          "lat": 17.5847,
+          "lng": 120.3892
+        },
+        "boundaries": null
+      },
+      "heroImage": "camella-photos/_cropped/CARINA RFO CAMELLA BANTAY NEW_photo.jpg",
+      "sourceSheet": "camella-photos/Camella Bantay/RFO/CARINA RFO CAMELLA BANTAY NEW.png",
+      "features": [
+        "gated",
+        "road"
+      ],
+      "amenities": [
+        "security"
+      ],
+      "_meta": {
+        "categoryFolder": "RFO",
+        "sourceFileName": "CARINA RFO CAMELLA BANTAY NEW.png"
+      }
+    },
+    {
+      "key": "camella-bantay-rfo-criselle-na-criselle-rfo-camella-bantay-new",
+      "title": "Criselle — Camella Bantay (RFO)",
+      "type": "HOUSE_AND_LOT",
+      "status": "AVAILABLE",
+      "price": 6284000,
+      "lotArea": 66,
+      "floorArea": 40,
+      "bedRooms": null,
+      "bathRooms": null,
+      "parking": null,
+      "details": "RFO house and lot in Camella Bantay, Bantay. Model: Criselle. Contact us for updated pricing and availability.",
+      "slug": "criselle-camella-bantay-rfo",
+      "subdivision": "Camella Bantay",
+      "city": "Bantay",
+      "province": "Ilocos Sur",
+      "country": "Philippines",
+      "region": "Region I",
+      "category": "RFO",
+      "model": "Criselle",
+      "location": {
+        "address": "Camella Bantay",
+        "barangay": "",
+        "city": "Bantay",
+        "province": "Ilocos Sur",
+        "country": "Philippines",
+        "region": "Region I",
+        "zipCode": null,
+        "coordinates": {
+          "lat": 17.5847,
+          "lng": 120.3892
+        },
+        "boundaries": null
+      },
+      "heroImage": "camella-photos/_cropped/CRISELLE RFO CAMELLA BANTAY NEW_photo.jpg",
+      "sourceSheet": "camella-photos/Camella Bantay/RFO/CRISELLE RFO CAMELLA BANTAY NEW.png",
+      "features": [
+        "gated",
+        "road"
+      ],
+      "amenities": [
+        "security"
+      ],
+      "_meta": {
+        "categoryFolder": "RFO",
+        "sourceFileName": "CRISELLE RFO CAMELLA BANTAY NEW.png"
+      }
+    },
+    {
+      "key": "camella-bantay-rfo-danielle-na-danielle-camella-bantay",
+      "title": "Danielle — Camella Bantay (RFO)",
+      "type": "HOUSE_AND_LOT",
+      "status": "AVAILABLE",
+      "price": 5497000,
+      "lotArea": 66,
+      "floorArea": 42,
+      "bedRooms": null,
+      "bathRooms": null,
+      "parking": null,
+      "details": "RFO house and lot in Camella Bantay, Bantay. Model: Danielle. Contact us for updated pricing and availability.",
+      "slug": "danielle-camella-bantay-rfo",
+      "subdivision": "Camella Bantay",
+      "city": "Bantay",
+      "province": "Ilocos Sur",
+      "country": "Philippines",
+      "region": "Region I",
+      "category": "RFO",
+      "model": "Danielle",
+      "location": {
+        "address": "Camella Bantay",
+        "barangay": "",
+        "city": "Bantay",
+        "province": "Ilocos Sur",
+        "country": "Philippines",
+        "region": "Region I",
+        "zipCode": null,
+        "coordinates": {
+          "lat": 17.5847,
+          "lng": 120.3892
+        },
+        "boundaries": null
+      },
+      "heroImage": "camella-photos/_cropped/DANIELLE CAMELLA  BANTAY_photo.jpg",
+      "sourceSheet": "camella-photos/Camella Bantay/RFO/DANIELLE CAMELLA  BANTAY.png",
+      "features": [
+        "gated",
+        "road"
+      ],
+      "amenities": [
+        "security"
+      ],
+      "_meta": {
+        "categoryFolder": "RFO",
+        "sourceFileName": "DANIELLE CAMELLA  BANTAY.png"
+      }
+    },
+    {
+      "key": "camella-bantay-rfo-elaisa-na-elaisa-rfo-camella-bantay-new",
+      "title": "Elaisa — Camella Bantay (RFO)",
+      "type": "HOUSE_AND_LOT",
+      "status": "AVAILABLE",
+      "price": 10489000,
+      "lotArea": 122,
+      "floorArea": 97,
+      "bedRooms": null,
+      "bathRooms": null,
+      "parking": null,
+      "details": "RFO house and lot in Camella Bantay, Bantay. Model: Elaisa. Contact us for updated pricing and availability.",
+      "slug": "elaisa-camella-bantay-rfo",
+      "subdivision": "Camella Bantay",
+      "city": "Bantay",
+      "province": "Ilocos Sur",
+      "country": "Philippines",
+      "region": "Region I",
+      "category": "RFO",
+      "model": "Elaisa",
+      "location": {
+        "address": "Camella Bantay",
+        "barangay": "",
+        "city": "Bantay",
+        "province": "Ilocos Sur",
+        "country": "Philippines",
+        "region": "Region I",
+        "zipCode": null,
+        "coordinates": {
+          "lat": 17.5847,
+          "lng": 120.3892
+        },
+        "boundaries": null
+      },
+      "heroImage": "camella-photos/_cropped/ELAISA RFO CAMELLA BANTAY NEW_photo.jpg",
+      "sourceSheet": "camella-photos/Camella Bantay/RFO/ELAISA RFO CAMELLA BANTAY NEW.png",
+      "features": [
+        "gated",
+        "road"
+      ],
+      "amenities": [
+        "security"
+      ],
+      "_meta": {
+        "categoryFolder": "RFO",
+        "sourceFileName": "ELAISA RFO CAMELLA BANTAY NEW.png"
+      }
+    },
+    {
+      "key": "camella-bantay-rfo-mika-na-mika-20-19-rfo-camella-bantay-new",
+      "title": "Mika — Camella Bantay (RFO)",
+      "type": "HOUSE_AND_LOT",
+      "status": "AVAILABLE",
+      "price": 6297000,
+      "lotArea": 66,
+      "floorArea": 46,
+      "bedRooms": null,
+      "bathRooms": null,
+      "parking": null,
+      "details": "RFO house and lot in Camella Bantay, Bantay. Model: Mika. Contact us for updated pricing and availability.",
+      "slug": "mika-camella-bantay-rfo",
+      "subdivision": "Camella Bantay",
+      "city": "Bantay",
+      "province": "Ilocos Sur",
+      "country": "Philippines",
+      "region": "Region I",
+      "category": "RFO",
+      "model": "Mika",
+      "location": {
+        "address": "Camella Bantay",
+        "barangay": "",
+        "city": "Bantay",
+        "province": "Ilocos Sur",
+        "country": "Philippines",
+        "region": "Region I",
+        "zipCode": null,
+        "coordinates": {
+          "lat": 17.5847,
+          "lng": 120.3892
+        },
+        "boundaries": null
+      },
+      "heroImage": "camella-photos/_cropped/MIKA 20-19 RFO CAMELLA BANTAY NEW_photo.jpg",
+      "sourceSheet": "camella-photos/Camella Bantay/RFO/MIKA 20-19 RFO CAMELLA BANTAY NEW.png",
+      "features": [
+        "gated",
+        "road"
+      ],
+      "amenities": [
+        "security"
+      ],
+      "_meta": {
+        "categoryFolder": "RFO",
+        "sourceFileName": "MIKA 20-19 RFO CAMELLA BANTAY NEW.png"
+      }
+    },
+    {
+      "key": "camella-bantay-rfo-rina-na-rina-rfo-camella-bantay-new",
+      "title": "Rina — Camella Bantay (RFO)",
+      "type": "HOUSE_AND_LOT",
+      "status": "AVAILABLE",
+      "price": 5929000,
+      "lotArea": 66,
+      "floorArea": 40,
+      "bedRooms": null,
+      "bathRooms": null,
+      "parking": null,
+      "details": "RFO house and lot in Camella Bantay, Bantay. Model: Rina. Contact us for updated pricing and availability.",
+      "slug": "rina-camella-bantay-rfo",
+      "subdivision": "Camella Bantay",
+      "city": "Bantay",
+      "province": "Ilocos Sur",
+      "country": "Philippines",
+      "region": "Region I",
+      "category": "RFO",
+      "model": "Rina",
+      "location": {
+        "address": "Camella Bantay",
+        "barangay": "",
+        "city": "Bantay",
+        "province": "Ilocos Sur",
+        "country": "Philippines",
+        "region": "Region I",
+        "zipCode": null,
+        "coordinates": {
+          "lat": 17.5847,
+          "lng": 120.3892
+        },
+        "boundaries": null
+      },
+      "heroImage": "camella-photos/_cropped/RINA RFO CAMELLA BANTAY NEW_photo.jpg",
+      "sourceSheet": "camella-photos/Camella Bantay/RFO/RINA RFO CAMELLA BANTAY NEW.png",
+      "features": [
+        "gated",
+        "road"
+      ],
+      "amenities": [
+        "security"
+      ],
+      "_meta": {
+        "categoryFolder": "RFO",
+        "sourceFileName": "RINA RFO CAMELLA BANTAY NEW.png"
+      }
+    },
+    {
+      "key": "camella-candon-lot-only-lot-110-lot-only-110-sqm-camella-candon",
+      "title": "110 sqm Lot — Camella Candon",
+      "type": "LOT",
+      "status": "AVAILABLE",
+      "price": 3954000,
+      "lotArea": 110,
+      "floorArea": null,
+      "bedRooms": null,
+      "bathRooms": null,
+      "parking": null,
+      "details": "110 sqm lot for sale in Camella Candon, Candon, Ilocos Sur. Gated Camella community.",
+      "slug": "lot-camella-candon-lot-only-110sqm",
+      "subdivision": "Camella Candon",
+      "city": "Candon",
+      "province": "Ilocos Sur",
+      "country": "Philippines",
+      "region": "Region I",
+      "category": "LOT_ONLY",
+      "model": null,
+      "location": {
+        "address": "Camella Candon",
+        "barangay": "",
+        "city": "Candon",
+        "province": "Ilocos Sur",
+        "country": "Philippines",
+        "region": "Region I",
+        "zipCode": null,
+        "coordinates": {
+          "lat": 17.193,
+          "lng": 120.453
+        },
+        "boundaries": null
+      },
+      "heroImage": "camella-photos/_cropped/Lot only 110 sqm Camella Candon_photo.jpg",
+      "sourceSheet": "camella-photos/Camella Candon/Lots Only/Lot only 110 sqm Camella Candon.png",
+      "features": [
+        "gated",
+        "road"
+      ],
+      "amenities": [
+        "security"
+      ],
+      "_meta": {
+        "categoryFolder": "Lots Only",
+        "sourceFileName": "Lot only 110 sqm Camella Candon.png"
+      }
+    },
+    {
+      "key": "camella-candon-lot-only-lot-176-lot-only-176-sqm-camella-candon",
+      "title": "176 sqm Lot — Camella Candon",
+      "type": "LOT",
+      "status": "AVAILABLE",
+      "price": 6325000,
+      "lotArea": 176,
+      "floorArea": null,
+      "bedRooms": null,
+      "bathRooms": null,
+      "parking": null,
+      "details": "176 sqm lot for sale in Camella Candon, Candon, Ilocos Sur. Gated Camella community.",
+      "slug": "lot-camella-candon-lot-only-176sqm",
+      "subdivision": "Camella Candon",
+      "city": "Candon",
+      "province": "Ilocos Sur",
+      "country": "Philippines",
+      "region": "Region I",
+      "category": "LOT_ONLY",
+      "model": null,
+      "location": {
+        "address": "Camella Candon",
+        "barangay": "",
+        "city": "Candon",
+        "province": "Ilocos Sur",
+        "country": "Philippines",
+        "region": "Region I",
+        "zipCode": null,
+        "coordinates": {
+          "lat": 17.193,
+          "lng": 120.453
+        },
+        "boundaries": null
+      },
+      "heroImage": "camella-photos/_cropped/Lot only 176 sqm Camella Candon_photo.jpg",
+      "sourceSheet": "camella-photos/Camella Candon/Lots Only/Lot only 176 sqm Camella Candon.png",
+      "features": [
+        "gated",
+        "road"
+      ],
+      "amenities": [
+        "security"
+      ],
+      "_meta": {
+        "categoryFolder": "Lots Only",
+        "sourceFileName": "Lot only 176 sqm Camella Candon.png"
+      }
+    },
+    {
+      "key": "camella-candon-lot-only-lot-44-lot-only-44-sqm-camella-candon",
+      "title": "44 sqm Lot — Camella Candon",
+      "type": "LOT",
+      "status": "AVAILABLE",
+      "price": 1582000,
+      "lotArea": 44,
+      "floorArea": null,
+      "bedRooms": null,
+      "bathRooms": null,
+      "parking": null,
+      "details": "44 sqm lot for sale in Camella Candon, Candon, Ilocos Sur. Gated Camella community.",
+      "slug": "lot-camella-candon-lot-only-44sqm",
+      "subdivision": "Camella Candon",
+      "city": "Candon",
+      "province": "Ilocos Sur",
+      "country": "Philippines",
+      "region": "Region I",
+      "category": "LOT_ONLY",
+      "model": null,
+      "location": {
+        "address": "Camella Candon",
+        "barangay": "",
+        "city": "Candon",
+        "province": "Ilocos Sur",
+        "country": "Philippines",
+        "region": "Region I",
+        "zipCode": null,
+        "coordinates": {
+          "lat": 17.193,
+          "lng": 120.453
+        },
+        "boundaries": null
+      },
+      "heroImage": "camella-photos/_cropped/Lot only 44 sqm Camella Candon_photo.jpg",
+      "sourceSheet": "camella-photos/Camella Candon/Lots Only/Lot only 44 sqm Camella Candon.png",
+      "features": [
+        "gated",
+        "road"
+      ],
+      "amenities": [
+        "security"
+      ],
+      "_meta": {
+        "categoryFolder": "Lots Only",
+        "sourceFileName": "Lot only 44 sqm Camella Candon.png"
+      }
+    },
+    {
+      "key": "camella-candon-lot-only-lot-66-lot-only-66-sqm-camella-candon",
+      "title": "66 sqm Lot — Camella Candon",
+      "type": "LOT",
+      "status": "AVAILABLE",
+      "price": 2372000,
+      "lotArea": 66,
+      "floorArea": null,
+      "bedRooms": null,
+      "bathRooms": null,
+      "parking": null,
+      "details": "66 sqm lot for sale in Camella Candon, Candon, Ilocos Sur. Gated Camella community.",
+      "slug": "lot-camella-candon-lot-only-66sqm",
+      "subdivision": "Camella Candon",
+      "city": "Candon",
+      "province": "Ilocos Sur",
+      "country": "Philippines",
+      "region": "Region I",
+      "category": "LOT_ONLY",
+      "model": null,
+      "location": {
+        "address": "Camella Candon",
+        "barangay": "",
+        "city": "Candon",
+        "province": "Ilocos Sur",
+        "country": "Philippines",
+        "region": "Region I",
+        "zipCode": null,
+        "coordinates": {
+          "lat": 17.193,
+          "lng": 120.453
+        },
+        "boundaries": null
+      },
+      "heroImage": "camella-photos/_cropped/Lot only 66 sqm Camella Candon_photo.jpg",
+      "sourceSheet": "camella-photos/Camella Candon/Lots Only/Lot only 66 sqm Camella Candon.png",
+      "features": [
+        "gated",
+        "road"
+      ],
+      "amenities": [
+        "security"
+      ],
+      "_meta": {
+        "categoryFolder": "Lots Only",
+        "sourceFileName": "Lot only 66 sqm Camella Candon.png"
+      }
+    },
+    {
+      "key": "camella-candon-lot-only-lot-72-lot-only-72-sqm-camella-candon",
+      "title": "72 sqm Lot — Camella Candon",
+      "type": "LOT",
+      "status": "AVAILABLE",
+      "price": 2588000,
+      "lotArea": 72,
+      "floorArea": null,
+      "bedRooms": null,
+      "bathRooms": null,
+      "parking": null,
+      "details": "72 sqm lot for sale in Camella Candon, Candon, Ilocos Sur. Gated Camella community.",
+      "slug": "lot-camella-candon-lot-only-72sqm",
+      "subdivision": "Camella Candon",
+      "city": "Candon",
+      "province": "Ilocos Sur",
+      "country": "Philippines",
+      "region": "Region I",
+      "category": "LOT_ONLY",
+      "model": null,
+      "location": {
+        "address": "Camella Candon",
+        "barangay": "",
+        "city": "Candon",
+        "province": "Ilocos Sur",
+        "country": "Philippines",
+        "region": "Region I",
+        "zipCode": null,
+        "coordinates": {
+          "lat": 17.193,
+          "lng": 120.453
+        },
+        "boundaries": null
+      },
+      "heroImage": "camella-photos/_cropped/Lot only 72 sqm Camella Candon_photo.jpg",
+      "sourceSheet": "camella-photos/Camella Candon/Lots Only/Lot only 72 sqm Camella Candon.png",
+      "features": [
+        "gated",
+        "road"
+      ],
+      "amenities": [
+        "security"
+      ],
+      "_meta": {
+        "categoryFolder": "Lots Only",
+        "sourceFileName": "Lot only 72 sqm Camella Candon.png"
+      }
+    },
+    {
+      "key": "camella-candon-lot-only-lot-80-lot-only-80-sqm-camella-candon",
+      "title": "80 sqm Lot — Camella Candon",
+      "type": "LOT",
+      "status": "AVAILABLE",
+      "price": 2875000,
+      "lotArea": 80,
+      "floorArea": null,
+      "bedRooms": null,
+      "bathRooms": null,
+      "parking": null,
+      "details": "80 sqm lot for sale in Camella Candon, Candon, Ilocos Sur. Gated Camella community.",
+      "slug": "lot-camella-candon-lot-only-80sqm",
+      "subdivision": "Camella Candon",
+      "city": "Candon",
+      "province": "Ilocos Sur",
+      "country": "Philippines",
+      "region": "Region I",
+      "category": "LOT_ONLY",
+      "model": null,
+      "location": {
+        "address": "Camella Candon",
+        "barangay": "",
+        "city": "Candon",
+        "province": "Ilocos Sur",
+        "country": "Philippines",
+        "region": "Region I",
+        "zipCode": null,
+        "coordinates": {
+          "lat": 17.193,
+          "lng": 120.453
+        },
+        "boundaries": null
+      },
+      "heroImage": "camella-photos/_cropped/Lot only 80 sqm Camella Candon_photo.jpg",
+      "sourceSheet": "camella-photos/Camella Candon/Lots Only/Lot only 80 sqm Camella Candon.png",
+      "features": [
+        "gated",
+        "road"
+      ],
+      "amenities": [
+        "security"
+      ],
+      "_meta": {
+        "categoryFolder": "Lots Only",
+        "sourceFileName": "Lot only 80 sqm Camella Candon.png"
+      }
+    },
+    {
+      "key": "camella-candon-lot-only-lot-88-lot-only-88-sqm-camella-candon",
+      "title": "88 sqm Lot — Camella Candon",
+      "type": "LOT",
+      "status": "AVAILABLE",
+      "price": 3163000,
+      "lotArea": 88,
+      "floorArea": null,
+      "bedRooms": null,
+      "bathRooms": null,
+      "parking": null,
+      "details": "88 sqm lot for sale in Camella Candon, Candon, Ilocos Sur. Gated Camella community.",
+      "slug": "lot-camella-candon-lot-only-88sqm",
+      "subdivision": "Camella Candon",
+      "city": "Candon",
+      "province": "Ilocos Sur",
+      "country": "Philippines",
+      "region": "Region I",
+      "category": "LOT_ONLY",
+      "model": null,
+      "location": {
+        "address": "Camella Candon",
+        "barangay": "",
+        "city": "Candon",
+        "province": "Ilocos Sur",
+        "country": "Philippines",
+        "region": "Region I",
+        "zipCode": null,
+        "coordinates": {
+          "lat": 17.193,
+          "lng": 120.453
+        },
+        "boundaries": null
+      },
+      "heroImage": "camella-photos/_cropped/Lot only 88 sqm Camella Candon_photo.jpg",
+      "sourceSheet": "camella-photos/Camella Candon/Lots Only/Lot only 88 sqm Camella Candon.png",
+      "features": [
+        "gated",
+        "road"
+      ],
+      "amenities": [
+        "security"
+      ],
+      "_meta": {
+        "categoryFolder": "Lots Only",
+        "sourceFileName": "Lot only 88 sqm Camella Candon.png"
+      }
+    },
+    {
+      "key": "camella-candon-lot-only-lot-92-lot-only-92-sqm-camella-candon",
+      "title": "92 sqm Lot — Camella Candon",
+      "type": "LOT",
+      "status": "AVAILABLE",
+      "price": 3220000,
+      "lotArea": 92,
+      "floorArea": null,
+      "bedRooms": null,
+      "bathRooms": null,
+      "parking": null,
+      "details": "92 sqm lot for sale in Camella Candon, Candon, Ilocos Sur. Gated Camella community.",
+      "slug": "lot-camella-candon-lot-only-92sqm",
+      "subdivision": "Camella Candon",
+      "city": "Candon",
+      "province": "Ilocos Sur",
+      "country": "Philippines",
+      "region": "Region I",
+      "category": "LOT_ONLY",
+      "model": null,
+      "location": {
+        "address": "Camella Candon",
+        "barangay": "",
+        "city": "Candon",
+        "province": "Ilocos Sur",
+        "country": "Philippines",
+        "region": "Region I",
+        "zipCode": null,
+        "coordinates": {
+          "lat": 17.193,
+          "lng": 120.453
+        },
+        "boundaries": null
+      },
+      "heroImage": "camella-photos/_cropped/Lot only 92 sqm Camella Candon_photo.jpg",
+      "sourceSheet": "camella-photos/Camella Candon/Lots Only/Lot only 92 sqm Camella Candon.png",
+      "features": [
+        "gated",
+        "road"
+      ],
+      "amenities": [
+        "security"
+      ],
+      "_meta": {
+        "categoryFolder": "Lots Only",
+        "sourceFileName": "Lot only 92 sqm Camella Candon.png"
+      }
+    },
+    {
+      "key": "camella-candon-nrfo-arielle-eu-66-arielle-eu-66-sqm-camella-candon",
+      "title": "Arielle EU, 66 sqm lot — Camella Candon (NRFO)",
+      "type": "HOUSE_AND_LOT",
+      "status": "AVAILABLE",
+      "price": 4652000,
+      "lotArea": 66,
+      "floorArea": 36,
+      "bedRooms": null,
+      "bathRooms": null,
+      "parking": null,
+      "details": "NRFO house and lot in Camella Candon, Candon. Model: Arielle EU. 66 sqm lot. Contact us for updated pricing and availability.",
+      "slug": "arielle-eu-camella-candon-nrfo-66sqm",
+      "subdivision": "Camella Candon",
+      "city": "Candon",
+      "province": "Ilocos Sur",
+      "country": "Philippines",
+      "region": "Region I",
+      "category": "NRFO",
+      "model": "Arielle EU",
+      "location": {
+        "address": "Camella Candon",
+        "barangay": "",
+        "city": "Candon",
+        "province": "Ilocos Sur",
+        "country": "Philippines",
+        "region": "Region I",
+        "zipCode": null,
+        "coordinates": {
+          "lat": 17.193,
+          "lng": 120.453
+        },
+        "boundaries": null
+      },
+      "heroImage": "camella-photos/_cropped/Arielle EU 66 sqm Camella Candon_photo.jpg",
+      "sourceSheet": "camella-photos/Camella Candon/NRFO - 15_ IN 18 MOS/Arielle EU 66 sqm Camella Candon.png",
+      "features": [
+        "gated",
+        "road"
+      ],
+      "amenities": [
+        "security"
+      ],
+      "_meta": {
+        "categoryFolder": "NRFO - 15_ IN 18 MOS",
+        "sourceFileName": "Arielle EU 66 sqm Camella Candon.png"
+      }
+    },
+    {
+      "key": "camella-candon-nrfo-arielle-iu-44-arielle-iu-44-sqm-camella-candon",
+      "title": "Arielle IU, 44 sqm lot — Camella Candon (NRFO)",
+      "type": "HOUSE_AND_LOT",
+      "status": "AVAILABLE",
+      "price": 3835000,
+      "lotArea": 44,
+      "floorArea": 36,
+      "bedRooms": null,
+      "bathRooms": null,
+      "parking": null,
+      "details": "NRFO house and lot in Camella Candon, Candon. Model: Arielle IU. 44 sqm lot. Contact us for updated pricing and availability.",
+      "slug": "arielle-iu-camella-candon-nrfo-44sqm",
+      "subdivision": "Camella Candon",
+      "city": "Candon",
+      "province": "Ilocos Sur",
+      "country": "Philippines",
+      "region": "Region I",
+      "category": "NRFO",
+      "model": "Arielle IU",
+      "location": {
+        "address": "Camella Candon",
+        "barangay": "",
+        "city": "Candon",
+        "province": "Ilocos Sur",
+        "country": "Philippines",
+        "region": "Region I",
+        "zipCode": null,
+        "coordinates": {
+          "lat": 17.193,
+          "lng": 120.453
+        },
+        "boundaries": null
+      },
+      "heroImage": "camella-photos/_cropped/Arielle IU 44 sqm Camella Candon_photo.jpg",
+      "sourceSheet": "camella-photos/Camella Candon/NRFO - 15_ IN 18 MOS/Arielle IU 44 sqm Camella Candon.png",
+      "features": [
+        "gated",
+        "road"
+      ],
+      "amenities": [
+        "security"
+      ],
+      "_meta": {
+        "categoryFolder": "NRFO - 15_ IN 18 MOS",
+        "sourceFileName": "Arielle IU 44 sqm Camella Candon.png"
+      }
+    },
+    {
+      "key": "camella-candon-nrfo-bella-na-bella-nrfo-camella-candon",
+      "title": "Bella — Camella Candon (NRFO)",
+      "type": "HOUSE_AND_LOT",
+      "status": "AVAILABLE",
+      "price": 6034000,
+      "lotArea": 83,
+      "floorArea": 53,
+      "bedRooms": null,
+      "bathRooms": null,
+      "parking": null,
+      "details": "NRFO house and lot in Camella Candon, Candon. Model: Bella. Contact us for updated pricing and availability.",
+      "slug": "bella-camella-candon-nrfo",
+      "subdivision": "Camella Candon",
+      "city": "Candon",
+      "province": "Ilocos Sur",
+      "country": "Philippines",
+      "region": "Region I",
+      "category": "NRFO",
+      "model": "Bella",
+      "location": {
+        "address": "Camella Candon",
+        "barangay": "",
+        "city": "Candon",
+        "province": "Ilocos Sur",
+        "country": "Philippines",
+        "region": "Region I",
+        "zipCode": null,
+        "coordinates": {
+          "lat": 17.193,
+          "lng": 120.453
+        },
+        "boundaries": null
+      },
+      "heroImage": "camella-photos/_cropped/Bella NRFO Camella Candon_photo.jpg",
+      "sourceSheet": "camella-photos/Camella Candon/NRFO - 15_ IN 18 MOS/Bella NRFO Camella Candon.png",
+      "features": [
+        "gated",
+        "road"
+      ],
+      "amenities": [
+        "security"
+      ],
+      "_meta": {
+        "categoryFolder": "NRFO - 15_ IN 18 MOS",
+        "sourceFileName": "Bella NRFO Camella Candon.png"
+      }
+    },
+    {
+      "key": "camella-candon-nrfo-cara-cb-na-cara-cb-nrfo-camella-candon",
+      "title": "Cara CB — Camella Candon (NRFO)",
+      "type": "HOUSE_AND_LOT",
+      "status": "AVAILABLE",
+      "price": 7324000,
+      "lotArea": 99,
+      "floorArea": 66,
+      "bedRooms": null,
+      "bathRooms": null,
+      "parking": null,
+      "details": "NRFO house and lot in Camella Candon, Candon. Model: Cara CB. Contact us for updated pricing and availability.",
+      "slug": "cara-cb-camella-candon-nrfo",
+      "subdivision": "Camella Candon",
+      "city": "Candon",
+      "province": "Ilocos Sur",
+      "country": "Philippines",
+      "region": "Region I",
+      "category": "NRFO",
+      "model": "Cara CB",
+      "location": {
+        "address": "Camella Candon",
+        "barangay": "",
+        "city": "Candon",
+        "province": "Ilocos Sur",
+        "country": "Philippines",
+        "region": "Region I",
+        "zipCode": null,
+        "coordinates": {
+          "lat": 17.193,
+          "lng": 120.453
+        },
+        "boundaries": null
+      },
+      "heroImage": "camella-photos/_cropped/Cara CB NRFO Camella Candon_photo.jpg",
+      "sourceSheet": "camella-photos/Camella Candon/NRFO - 15_ IN 18 MOS/Cara CB NRFO Camella Candon.png",
+      "features": [
+        "gated",
+        "road"
+      ],
+      "amenities": [
+        "security"
+      ],
+      "_meta": {
+        "categoryFolder": "NRFO - 15_ IN 18 MOS",
+        "sourceFileName": "Cara CB NRFO Camella Candon.png"
+      }
+    },
+    {
+      "key": "camella-candon-nrfo-criselle-na-criselle-nrfo-camella-candon",
+      "title": "Criselle — Camella Candon (NRFO)",
+      "type": "HOUSE_AND_LOT",
+      "status": "AVAILABLE",
+      "price": 5582000,
+      "lotArea": 66,
+      "floorArea": 40,
+      "bedRooms": null,
+      "bathRooms": null,
+      "parking": null,
+      "details": "NRFO house and lot in Camella Candon, Candon. Model: Criselle. Contact us for updated pricing and availability.",
+      "slug": "criselle-camella-candon-nrfo",
+      "subdivision": "Camella Candon",
+      "city": "Candon",
+      "province": "Ilocos Sur",
+      "country": "Philippines",
+      "region": "Region I",
+      "category": "NRFO",
+      "model": "Criselle",
+      "location": {
+        "address": "Camella Candon",
+        "barangay": "",
+        "city": "Candon",
+        "province": "Ilocos Sur",
+        "country": "Philippines",
+        "region": "Region I",
+        "zipCode": null,
+        "coordinates": {
+          "lat": 17.193,
+          "lng": 120.453
+        },
+        "boundaries": null
+      },
+      "heroImage": "camella-photos/_cropped/Criselle NRFO Camella Candon_photo.jpg",
+      "sourceSheet": "camella-photos/Camella Candon/NRFO - 15_ IN 18 MOS/Criselle NRFO Camella Candon.png",
+      "features": [
+        "gated",
+        "road"
+      ],
+      "amenities": [
+        "security"
+      ],
+      "_meta": {
+        "categoryFolder": "NRFO - 15_ IN 18 MOS",
+        "sourceFileName": "Criselle NRFO Camella Candon.png"
+      }
+    },
+    {
+      "key": "camella-candon-nrfo-dana-na-dana-nrfo-camella-candon",
+      "title": "Dana — Camella Candon (NRFO)",
+      "type": "HOUSE_AND_LOT",
+      "status": "AVAILABLE",
+      "price": 9005000,
+      "lotArea": 121,
+      "floorArea": 85,
+      "bedRooms": null,
+      "bathRooms": null,
+      "parking": null,
+      "details": "NRFO house and lot in Camella Candon, Candon. Model: Dana. Contact us for updated pricing and availability.",
+      "slug": "dana-camella-candon-nrfo",
+      "subdivision": "Camella Candon",
+      "city": "Candon",
+      "province": "Ilocos Sur",
+      "country": "Philippines",
+      "region": "Region I",
+      "category": "NRFO",
+      "model": "Dana",
+      "location": {
+        "address": "Camella Candon",
+        "barangay": "",
+        "city": "Candon",
+        "province": "Ilocos Sur",
+        "country": "Philippines",
+        "region": "Region I",
+        "zipCode": null,
+        "coordinates": {
+          "lat": 17.193,
+          "lng": 120.453
+        },
+        "boundaries": null
+      },
+      "heroImage": "camella-photos/_cropped/Dana NRFO Camella Candon_photo.jpg",
+      "sourceSheet": "camella-photos/Camella Candon/NRFO - 15_ IN 18 MOS/Dana NRFO Camella Candon.png",
+      "features": [
+        "gated",
+        "road"
+      ],
+      "amenities": [
+        "security"
+      ],
+      "_meta": {
+        "categoryFolder": "NRFO - 15_ IN 18 MOS",
+        "sourceFileName": "Dana NRFO Camella Candon.png"
+      }
+    },
+    {
+      "key": "camella-candon-nrfo-ella-na-ella-nrfo-camella-candon",
+      "title": "Ella — Camella Candon (NRFO)",
+      "type": "HOUSE_AND_LOT",
+      "status": "AVAILABLE",
+      "price": 9532000,
+      "lotArea": 121,
+      "floorArea": 100,
+      "bedRooms": null,
+      "bathRooms": null,
+      "parking": null,
+      "details": "NRFO house and lot in Camella Candon, Candon. Model: Ella. Contact us for updated pricing and availability.",
+      "slug": "ella-camella-candon-nrfo",
+      "subdivision": "Camella Candon",
+      "city": "Candon",
+      "province": "Ilocos Sur",
+      "country": "Philippines",
+      "region": "Region I",
+      "category": "NRFO",
+      "model": "Ella",
+      "location": {
+        "address": "Camella Candon",
+        "barangay": "",
+        "city": "Candon",
+        "province": "Ilocos Sur",
+        "country": "Philippines",
+        "region": "Region I",
+        "zipCode": null,
+        "coordinates": {
+          "lat": 17.193,
+          "lng": 120.453
+        },
+        "boundaries": null
+      },
+      "heroImage": "camella-photos/_cropped/Ella NRFO Camella Candon_photo.jpg",
+      "sourceSheet": "camella-photos/Camella Candon/NRFO - 15_ IN 18 MOS/Ella NRFO Camella Candon.png",
+      "features": [
+        "gated",
+        "road"
+      ],
+      "amenities": [
+        "security"
+      ],
+      "_meta": {
+        "categoryFolder": "NRFO - 15_ IN 18 MOS",
+        "sourceFileName": "Ella NRFO Camella Candon.png"
+      }
+    },
+    {
+      "key": "camella-candon-nrfo-ezabelle-na-ezabelle-nrfo-camella-candon",
+      "title": "Ezabelle — Camella Candon (NRFO)",
+      "type": "HOUSE_AND_LOT",
+      "status": "AVAILABLE",
+      "price": 5202000,
+      "lotArea": 66,
+      "floorArea": 46,
+      "bedRooms": null,
+      "bathRooms": null,
+      "parking": null,
+      "details": "NRFO house and lot in Camella Candon, Candon. Model: Ezabelle. Contact us for updated pricing and availability.",
+      "slug": "ezabelle-camella-candon-nrfo",
+      "subdivision": "Camella Candon",
+      "city": "Candon",
+      "province": "Ilocos Sur",
+      "country": "Philippines",
+      "region": "Region I",
+      "category": "NRFO",
+      "model": "Ezabelle",
+      "location": {
+        "address": "Camella Candon",
+        "barangay": "",
+        "city": "Candon",
+        "province": "Ilocos Sur",
+        "country": "Philippines",
+        "region": "Region I",
+        "zipCode": null,
+        "coordinates": {
+          "lat": 17.193,
+          "lng": 120.453
+        },
+        "boundaries": null
+      },
+      "heroImage": "camella-photos/_cropped/Ezabelle NRFO Camella Candon_photo.jpg",
+      "sourceSheet": "camella-photos/Camella Candon/NRFO - 15_ IN 18 MOS/Ezabelle NRFO Camella Candon.png",
+      "features": [
+        "gated",
+        "road"
+      ],
+      "amenities": [
+        "security"
+      ],
+      "_meta": {
+        "categoryFolder": "NRFO - 15_ IN 18 MOS",
+        "sourceFileName": "Ezabelle NRFO Camella Candon.png"
+      }
+    },
+    {
+      "key": "camella-candon-nrfo-freya-na-freya-nrfo-camella-candon",
+      "title": "Freya — Camella Candon (NRFO)",
+      "type": "HOUSE_AND_LOT",
+      "status": "AVAILABLE",
+      "price": 11039000,
+      "lotArea": 132,
+      "floorArea": 142,
+      "bedRooms": null,
+      "bathRooms": null,
+      "parking": null,
+      "details": "NRFO house and lot in Camella Candon, Candon. Model: Freya. Contact us for updated pricing and availability.",
+      "slug": "freya-camella-candon-nrfo",
+      "subdivision": "Camella Candon",
+      "city": "Candon",
+      "province": "Ilocos Sur",
+      "country": "Philippines",
+      "region": "Region I",
+      "category": "NRFO",
+      "model": "Freya",
+      "location": {
+        "address": "Camella Candon",
+        "barangay": "",
+        "city": "Candon",
+        "province": "Ilocos Sur",
+        "country": "Philippines",
+        "region": "Region I",
+        "zipCode": null,
+        "coordinates": {
+          "lat": 17.193,
+          "lng": 120.453
+        },
+        "boundaries": null
+      },
+      "heroImage": "camella-photos/_cropped/Freya NRFO Camella Candon_photo.jpg",
+      "sourceSheet": "camella-photos/Camella Candon/NRFO - 15_ IN 18 MOS/Freya NRFO Camella Candon.png",
+      "features": [
+        "gated",
+        "road"
+      ],
+      "amenities": [
+        "security"
+      ],
+      "_meta": {
+        "categoryFolder": "NRFO - 15_ IN 18 MOS",
+        "sourceFileName": "Freya NRFO Camella Candon.png"
+      }
+    },
+    {
+      "key": "camella-candon-nrfo-greta-na-greta-nrfo-camella-candon",
+      "title": "Greta — Camella Candon (NRFO)",
+      "type": "HOUSE_AND_LOT",
+      "status": "AVAILABLE",
+      "price": 15409000,
+      "lotArea": 243,
+      "floorArea": 166,
+      "bedRooms": null,
+      "bathRooms": null,
+      "parking": null,
+      "details": "NRFO house and lot in Camella Candon, Candon. Model: Greta. Contact us for updated pricing and availability.",
+      "slug": "greta-camella-candon-nrfo",
+      "subdivision": "Camella Candon",
+      "city": "Candon",
+      "province": "Ilocos Sur",
+      "country": "Philippines",
+      "region": "Region I",
+      "category": "NRFO",
+      "model": "Greta",
+      "location": {
+        "address": "Camella Candon",
+        "barangay": "",
+        "city": "Candon",
+        "province": "Ilocos Sur",
+        "country": "Philippines",
+        "region": "Region I",
+        "zipCode": null,
+        "coordinates": {
+          "lat": 17.193,
+          "lng": 120.453
+        },
+        "boundaries": null
+      },
+      "heroImage": "camella-photos/_cropped/Greta NRFO Camella Candon_photo.jpg",
+      "sourceSheet": "camella-photos/Camella Candon/NRFO - 15_ IN 18 MOS/Greta NRFO Camella Candon.png",
+      "features": [
+        "gated",
+        "road"
+      ],
+      "amenities": [
+        "security"
+      ],
+      "_meta": {
+        "categoryFolder": "NRFO - 15_ IN 18 MOS",
+        "sourceFileName": "Greta NRFO Camella Candon.png"
+      }
+    },
+    {
+      "key": "camella-candon-rfo-criselle-na-criselle-8-7-rfo-camella-candon-new",
+      "title": "Criselle — Camella Candon (RFO)",
+      "type": "HOUSE_AND_LOT",
+      "status": "AVAILABLE",
+      "price": 5761000,
+      "lotArea": 66,
+      "floorArea": 40,
+      "bedRooms": null,
+      "bathRooms": null,
+      "parking": null,
+      "details": "RFO house and lot in Camella Candon, Candon. Model: Criselle. Contact us for updated pricing and availability.",
+      "slug": "criselle-camella-candon-rfo",
+      "subdivision": "Camella Candon",
+      "city": "Candon",
+      "province": "Ilocos Sur",
+      "country": "Philippines",
+      "region": "Region I",
+      "category": "RFO",
+      "model": "Criselle",
+      "location": {
+        "address": "Camella Candon",
+        "barangay": "",
+        "city": "Candon",
+        "province": "Ilocos Sur",
+        "country": "Philippines",
+        "region": "Region I",
+        "zipCode": null,
+        "coordinates": {
+          "lat": 17.193,
+          "lng": 120.453
+        },
+        "boundaries": null
+      },
+      "heroImage": "camella-photos/_cropped/CRISELLE 8-7 RFO CAMELLA CANDON NEW_photo.jpg",
+      "sourceSheet": "camella-photos/Camella Candon/RFO & BTS/CRISELLE 8-7 RFO CAMELLA CANDON NEW.png",
+      "features": [
+        "gated",
+        "road"
+      ],
+      "amenities": [
+        "security"
+      ],
+      "_meta": {
+        "categoryFolder": "RFO & BTS",
+        "sourceFileName": "CRISELLE 8-7 RFO CAMELLA CANDON NEW.png"
+      }
+    },
+    {
+      "key": "camella-candon-rfo-criselle-na-criselle-9-42-rfo-camella-candon-new",
+      "title": "Criselle — Camella Candon (RFO)",
+      "type": "HOUSE_AND_LOT",
+      "status": "AVAILABLE",
+      "price": 5761000,
+      "lotArea": 66,
+      "floorArea": 40,
+      "bedRooms": null,
+      "bathRooms": null,
+      "parking": null,
+      "details": "RFO house and lot in Camella Candon, Candon. Model: Criselle. Contact us for updated pricing and availability.",
+      "slug": "criselle-camella-candon-rfo-2",
+      "subdivision": "Camella Candon",
+      "city": "Candon",
+      "province": "Ilocos Sur",
+      "country": "Philippines",
+      "region": "Region I",
+      "category": "RFO",
+      "model": "Criselle",
+      "location": {
+        "address": "Camella Candon",
+        "barangay": "",
+        "city": "Candon",
+        "province": "Ilocos Sur",
+        "country": "Philippines",
+        "region": "Region I",
+        "zipCode": null,
+        "coordinates": {
+          "lat": 17.193,
+          "lng": 120.453
+        },
+        "boundaries": null
+      },
+      "heroImage": "camella-photos/_cropped/CRISELLE 9-42 RFO CAMELLA CANDON NEW_photo.jpg",
+      "sourceSheet": "camella-photos/Camella Candon/RFO & BTS/CRISELLE 9-42 RFO CAMELLA CANDON NEW.png",
+      "features": [
+        "gated",
+        "road"
+      ],
+      "amenities": [
+        "security"
+      ],
+      "_meta": {
+        "categoryFolder": "RFO & BTS",
+        "sourceFileName": "CRISELLE 9-42 RFO CAMELLA CANDON NEW.png"
+      }
+    },
+    {
+      "key": "camella-candon-bts-dana-cb-na-dana-cb-bts-camella-candon",
+      "title": "Dana CB — Camella Candon (BTS)",
+      "type": "HOUSE_AND_LOT",
+      "status": "AVAILABLE",
+      "price": 9115000,
+      "lotArea": 122,
+      "floorArea": 85,
+      "bedRooms": null,
+      "bathRooms": null,
+      "parking": null,
+      "details": "BTS house and lot in Camella Candon, Candon. Model: Dana CB. Contact us for updated pricing and availability.",
+      "slug": "dana-cb-camella-candon-bts",
+      "subdivision": "Camella Candon",
+      "city": "Candon",
+      "province": "Ilocos Sur",
+      "country": "Philippines",
+      "region": "Region I",
+      "category": "BTS",
+      "model": "Dana CB",
+      "location": {
+        "address": "Camella Candon",
+        "barangay": "",
+        "city": "Candon",
+        "province": "Ilocos Sur",
+        "country": "Philippines",
+        "region": "Region I",
+        "zipCode": null,
+        "coordinates": {
+          "lat": 17.193,
+          "lng": 120.453
+        },
+        "boundaries": null
+      },
+      "heroImage": "camella-photos/_cropped/Dana CB BTS Camella Candon_photo.jpg",
+      "sourceSheet": "camella-photos/Camella Candon/RFO & BTS/Dana CB BTS Camella Candon.png",
+      "features": [
+        "gated",
+        "road"
+      ],
+      "amenities": [
+        "security"
+      ],
+      "_meta": {
+        "categoryFolder": "RFO & BTS",
+        "sourceFileName": "Dana CB BTS Camella Candon.png"
+      }
+    },
+    {
+      "key": "camella-laoag-lot-only-lot-174-lot-only-174sqm-camella-laoag",
+      "title": "174 sqm Lot — Camella Laoag",
+      "type": "LOT",
+      "status": "AVAILABLE",
+      "price": 8265000,
+      "lotArea": 174,
+      "floorArea": null,
+      "bedRooms": null,
+      "bathRooms": null,
+      "parking": null,
+      "details": "174 sqm lot for sale in Camella Laoag, Laoag City, Ilocos Norte. Gated Camella community.",
+      "slug": "lot-camella-laoag-lot-only-174sqm",
+      "subdivision": "Camella Laoag",
+      "city": "Laoag City",
+      "province": "Ilocos Norte",
+      "country": "Philippines",
+      "region": "Region I",
+      "category": "LOT_ONLY",
+      "model": null,
+      "location": {
+        "address": "Camella Laoag",
+        "barangay": "",
+        "city": "Laoag City",
+        "province": "Ilocos Norte",
+        "country": "Philippines",
+        "region": "Region I",
+        "zipCode": null,
+        "coordinates": {
+          "lat": 18.1978,
+          "lng": 120.5927
+        },
+        "boundaries": null
+      },
+      "heroImage": "camella-photos/_cropped/Lot only 174sqm Camella Laoag_photo.jpg",
+      "sourceSheet": "camella-photos/Camella Laoag/LOT Only/Lot only 174sqm Camella Laoag.png",
+      "features": [
+        "gated",
+        "road"
+      ],
+      "amenities": [
+        "security"
+      ],
+      "_meta": {
+        "categoryFolder": "LOT Only",
+        "sourceFileName": "Lot only 174sqm Camella Laoag.png"
+      }
+    },
+    {
+      "key": "camella-laoag-nrfo-criselle-174-camella-laoag-criselle-174-sqms",
+      "title": "Criselle, 174 sqm lot — Camella Laoag (NRFO)",
+      "type": "HOUSE_AND_LOT",
+      "status": "AVAILABLE",
+      "price": 9698000,
+      "lotArea": 174,
+      "floorArea": 40,
+      "bedRooms": null,
+      "bathRooms": null,
+      "parking": null,
+      "details": "NRFO house and lot in Camella Laoag, Laoag City. Model: Criselle. 174 sqm lot. Contact us for updated pricing and availability.",
+      "slug": "criselle-camella-laoag-nrfo-174sqm",
+      "subdivision": "Camella Laoag",
+      "city": "Laoag City",
+      "province": "Ilocos Norte",
+      "country": "Philippines",
+      "region": "Region I",
+      "category": "NRFO",
+      "model": "Criselle",
+      "location": {
+        "address": "Camella Laoag",
+        "barangay": "",
+        "city": "Laoag City",
+        "province": "Ilocos Norte",
+        "country": "Philippines",
+        "region": "Region I",
+        "zipCode": null,
+        "coordinates": {
+          "lat": 18.1978,
+          "lng": 120.5927
+        },
+        "boundaries": null
+      },
+      "heroImage": "camella-photos/_cropped/Camella Laoag Criselle 174 sqms_photo.jpg",
+      "sourceSheet": "camella-photos/Camella Laoag/NRFO 15_ in 18mos/Camella Laoag Criselle 174 sqms.jpg",
+      "features": [
+        "gated",
+        "road"
+      ],
+      "amenities": [
+        "security"
+      ],
+      "_meta": {
+        "categoryFolder": "NRFO 15_ in 18mos",
+        "sourceFileName": "Camella Laoag Criselle 174 sqms.jpg"
+      }
+    },
+    {
+      "key": "camella-laoag-nrfo-ezabelle-174-camella-laoag-ezabelle-174-sqms",
+      "title": "Ezabelle, 174 sqm lot — Camella Laoag (NRFO)",
+      "type": "HOUSE_AND_LOT",
+      "status": "AVAILABLE",
+      "price": 9856000,
+      "lotArea": 174,
+      "floorArea": 46,
+      "bedRooms": null,
+      "bathRooms": null,
+      "parking": null,
+      "details": "NRFO house and lot in Camella Laoag, Laoag City. Model: Ezabelle. 174 sqm lot. Contact us for updated pricing and availability.",
+      "slug": "ezabelle-camella-laoag-nrfo-174sqm",
+      "subdivision": "Camella Laoag",
+      "city": "Laoag City",
+      "province": "Ilocos Norte",
+      "country": "Philippines",
+      "region": "Region I",
+      "category": "NRFO",
+      "model": "Ezabelle",
+      "location": {
+        "address": "Camella Laoag",
+        "barangay": "",
+        "city": "Laoag City",
+        "province": "Ilocos Norte",
+        "country": "Philippines",
+        "region": "Region I",
+        "zipCode": null,
+        "coordinates": {
+          "lat": 18.1978,
+          "lng": 120.5927
+        },
+        "boundaries": null
+      },
+      "heroImage": "camella-photos/_cropped/Camella Laoag Ezabelle 174 sqms_photo.jpg",
+      "sourceSheet": "camella-photos/Camella Laoag/NRFO 15_ in 18mos/Camella Laoag Ezabelle 174 sqms.jpg",
+      "features": [
+        "gated",
+        "road"
+      ],
+      "amenities": [
+        "security"
+      ],
+      "_meta": {
+        "categoryFolder": "NRFO 15_ in 18mos",
+        "sourceFileName": "Camella Laoag Ezabelle 174 sqms.jpg"
+      }
+    },
+    {
+      "key": "camella-laoag-nrfo-cara-cb-165-cara-cb-nrfo-camella-laoag-165sqm",
+      "title": "Cara CB, 165 sqm lot — Camella Laoag (NRFO)",
+      "type": "HOUSE_AND_LOT",
+      "status": "AVAILABLE",
+      "price": 11295000,
+      "lotArea": 165,
+      "floorArea": 66,
+      "bedRooms": null,
+      "bathRooms": null,
+      "parking": null,
+      "details": "NRFO house and lot in Camella Laoag, Laoag City. Model: Cara CB. 165 sqm lot. Contact us for updated pricing and availability.",
+      "slug": "cara-cb-camella-laoag-nrfo-165sqm",
+      "subdivision": "Camella Laoag",
+      "city": "Laoag City",
+      "province": "Ilocos Norte",
+      "country": "Philippines",
+      "region": "Region I",
+      "category": "NRFO",
+      "model": "Cara CB",
+      "location": {
+        "address": "Camella Laoag",
+        "barangay": "",
+        "city": "Laoag City",
+        "province": "Ilocos Norte",
+        "country": "Philippines",
+        "region": "Region I",
+        "zipCode": null,
+        "coordinates": {
+          "lat": 18.1978,
+          "lng": 120.5927
+        },
+        "boundaries": null
+      },
+      "heroImage": "camella-photos/_cropped/Cara CB NRFO Camella Laoag 165sqm_photo.jpg",
+      "sourceSheet": "camella-photos/Camella Laoag/NRFO 15_ in 18mos/Cara CB NRFO Camella Laoag 165sqm.png",
+      "features": [
+        "gated",
+        "road"
+      ],
+      "amenities": [
+        "security"
+      ],
+      "_meta": {
+        "categoryFolder": "NRFO 15_ in 18mos",
+        "sourceFileName": "Cara CB NRFO Camella Laoag 165sqm.png"
+      }
+    },
+    {
+      "key": "camella-laoag-nrfo-cara-cb-168-cara-cb-nrfo-camella-laoag-168sqm",
+      "title": "Cara CB, 168 sqm lot — Camella Laoag (NRFO)",
+      "type": "HOUSE_AND_LOT",
+      "status": "AVAILABLE",
+      "price": 11427000,
+      "lotArea": 168,
+      "floorArea": 66,
+      "bedRooms": null,
+      "bathRooms": null,
+      "parking": null,
+      "details": "NRFO house and lot in Camella Laoag, Laoag City. Model: Cara CB. 168 sqm lot. Contact us for updated pricing and availability.",
+      "slug": "cara-cb-camella-laoag-nrfo-168sqm",
+      "subdivision": "Camella Laoag",
+      "city": "Laoag City",
+      "province": "Ilocos Norte",
+      "country": "Philippines",
+      "region": "Region I",
+      "category": "NRFO",
+      "model": "Cara CB",
+      "location": {
+        "address": "Camella Laoag",
+        "barangay": "",
+        "city": "Laoag City",
+        "province": "Ilocos Norte",
+        "country": "Philippines",
+        "region": "Region I",
+        "zipCode": null,
+        "coordinates": {
+          "lat": 18.1978,
+          "lng": 120.5927
+        },
+        "boundaries": null
+      },
+      "heroImage": "camella-photos/_cropped/Cara CB NRFO Camella Laoag 168sqm_photo.jpg",
+      "sourceSheet": "camella-photos/Camella Laoag/NRFO 15_ in 18mos/Cara CB NRFO Camella Laoag 168sqm.png",
+      "features": [
+        "gated",
+        "road"
+      ],
+      "amenities": [
+        "security"
+      ],
+      "_meta": {
+        "categoryFolder": "NRFO 15_ in 18mos",
+        "sourceFileName": "Cara CB NRFO Camella Laoag 168sqm.png"
+      }
+    },
+    {
+      "key": "camella-laoag-nrfo-dana-cb-165-dana-cb-nrfo-camella-laoag-165sqm",
+      "title": "Dana CB, 165 sqm lot — Camella Laoag (NRFO)",
+      "type": "HOUSE_AND_LOT",
+      "status": "AVAILABLE",
+      "price": 12315000,
+      "lotArea": 165,
+      "floorArea": 88,
+      "bedRooms": null,
+      "bathRooms": null,
+      "parking": null,
+      "details": "NRFO house and lot in Camella Laoag, Laoag City. Model: Dana CB. 165 sqm lot. Contact us for updated pricing and availability.",
+      "slug": "dana-cb-camella-laoag-nrfo-165sqm",
+      "subdivision": "Camella Laoag",
+      "city": "Laoag City",
+      "province": "Ilocos Norte",
+      "country": "Philippines",
+      "region": "Region I",
+      "category": "NRFO",
+      "model": "Dana CB",
+      "location": {
+        "address": "Camella Laoag",
+        "barangay": "",
+        "city": "Laoag City",
+        "province": "Ilocos Norte",
+        "country": "Philippines",
+        "region": "Region I",
+        "zipCode": null,
+        "coordinates": {
+          "lat": 18.1978,
+          "lng": 120.5927
+        },
+        "boundaries": null
+      },
+      "heroImage": "camella-photos/_cropped/Dana CB NRFO Camella Laoag 165sqm_photo.jpg",
+      "sourceSheet": "camella-photos/Camella Laoag/NRFO 15_ in 18mos/Dana CB NRFO Camella Laoag 165sqm.png",
+      "features": [
+        "gated",
+        "road"
+      ],
+      "amenities": [
+        "security"
+      ],
+      "_meta": {
+        "categoryFolder": "NRFO 15_ in 18mos",
+        "sourceFileName": "Dana CB NRFO Camella Laoag 165sqm.png"
+      }
+    },
+    {
+      "key": "camella-laoag-nrfo-dana-cb-168-dana-cb-nrfo-camella-laoag-168sqm",
+      "title": "Dana CB, 168 sqm lot — Camella Laoag (NRFO)",
+      "type": "HOUSE_AND_LOT",
+      "status": "AVAILABLE",
+      "price": 12446000,
+      "lotArea": 168,
+      "floorArea": 85,
+      "bedRooms": null,
+      "bathRooms": null,
+      "parking": null,
+      "details": "NRFO house and lot in Camella Laoag, Laoag City. Model: Dana CB. 168 sqm lot. Contact us for updated pricing and availability.",
+      "slug": "dana-cb-camella-laoag-nrfo-168sqm",
+      "subdivision": "Camella Laoag",
+      "city": "Laoag City",
+      "province": "Ilocos Norte",
+      "country": "Philippines",
+      "region": "Region I",
+      "category": "NRFO",
+      "model": "Dana CB",
+      "location": {
+        "address": "Camella Laoag",
+        "barangay": "",
+        "city": "Laoag City",
+        "province": "Ilocos Norte",
+        "country": "Philippines",
+        "region": "Region I",
+        "zipCode": null,
+        "coordinates": {
+          "lat": 18.1978,
+          "lng": 120.5927
+        },
+        "boundaries": null
+      },
+      "heroImage": "camella-photos/_cropped/Dana CB NRFO Camella Laoag 168sqm_photo.jpg",
+      "sourceSheet": "camella-photos/Camella Laoag/NRFO 15_ in 18mos/Dana CB NRFO Camella Laoag 168sqm.png",
+      "features": [
+        "gated",
+        "road"
+      ],
+      "amenities": [
+        "security"
+      ],
+      "_meta": {
+        "categoryFolder": "NRFO 15_ in 18mos",
+        "sourceFileName": "Dana CB NRFO Camella Laoag 168sqm.png"
+      }
+    },
+    {
+      "key": "camella-laoag-nrfo-ella-cb-165-ella-cb-nrfo-camella-laoag-165sqm",
+      "title": "Ella CB, 165 sqm lot — Camella Laoag (NRFO)",
+      "type": "HOUSE_AND_LOT",
+      "status": "AVAILABLE",
+      "price": 12841000,
+      "lotArea": 165,
+      "floorArea": 100,
+      "bedRooms": null,
+      "bathRooms": null,
+      "parking": null,
+      "details": "NRFO house and lot in Camella Laoag, Laoag City. Model: Ella CB. 165 sqm lot. Contact us for updated pricing and availability.",
+      "slug": "ella-cb-camella-laoag-nrfo-165sqm",
+      "subdivision": "Camella Laoag",
+      "city": "Laoag City",
+      "province": "Ilocos Norte",
+      "country": "Philippines",
+      "region": "Region I",
+      "category": "NRFO",
+      "model": "Ella CB",
+      "location": {
+        "address": "Camella Laoag",
+        "barangay": "",
+        "city": "Laoag City",
+        "province": "Ilocos Norte",
+        "country": "Philippines",
+        "region": "Region I",
+        "zipCode": null,
+        "coordinates": {
+          "lat": 18.1978,
+          "lng": 120.5927
+        },
+        "boundaries": null
+      },
+      "heroImage": "camella-photos/_cropped/Ella CB NRFO Camella Laoag 165sqm_photo.jpg",
+      "sourceSheet": "camella-photos/Camella Laoag/NRFO 15_ in 18mos/Ella CB NRFO Camella Laoag 165sqm.png",
+      "features": [
+        "gated",
+        "road"
+      ],
+      "amenities": [
+        "security"
+      ],
+      "_meta": {
+        "categoryFolder": "NRFO 15_ in 18mos",
+        "sourceFileName": "Ella CB NRFO Camella Laoag 165sqm.png"
+      }
+    },
+    {
+      "key": "camella-laoag-nrfo-ella-cb-168-ella-cb-nrfo-camella-laoag-168sqm",
+      "title": "Ella CB, 168 sqm lot — Camella Laoag (NRFO)",
+      "type": "HOUSE_AND_LOT",
+      "status": "AVAILABLE",
+      "price": 12972000,
+      "lotArea": 168,
+      "floorArea": 100,
+      "bedRooms": null,
+      "bathRooms": null,
+      "parking": null,
+      "details": "NRFO house and lot in Camella Laoag, Laoag City. Model: Ella CB. 168 sqm lot. Contact us for updated pricing and availability.",
+      "slug": "ella-cb-camella-laoag-nrfo-168sqm",
+      "subdivision": "Camella Laoag",
+      "city": "Laoag City",
+      "province": "Ilocos Norte",
+      "country": "Philippines",
+      "region": "Region I",
+      "category": "NRFO",
+      "model": "Ella CB",
+      "location": {
+        "address": "Camella Laoag",
+        "barangay": "",
+        "city": "Laoag City",
+        "province": "Ilocos Norte",
+        "country": "Philippines",
+        "region": "Region I",
+        "zipCode": null,
+        "coordinates": {
+          "lat": 18.1978,
+          "lng": 120.5927
+        },
+        "boundaries": null
+      },
+      "heroImage": "camella-photos/_cropped/Ella CB NRFO Camella Laoag 168sqm_photo.jpg",
+      "sourceSheet": "camella-photos/Camella Laoag/NRFO 15_ in 18mos/Ella CB NRFO Camella Laoag 168sqm.png",
+      "features": [
+        "gated",
+        "road"
+      ],
+      "amenities": [
+        "security"
+      ],
+      "_meta": {
+        "categoryFolder": "NRFO 15_ in 18mos",
+        "sourceFileName": "Ella CB NRFO Camella Laoag 168sqm.png"
+      }
+    },
+    {
+      "key": "camella-laoag-nrfo-freya-165-freya-165sqm-camella-laoag",
+      "title": "Freya, 165 sqm lot — Camella Laoag (NRFO)",
+      "type": "HOUSE_AND_LOT",
+      "status": "AVAILABLE",
+      "price": 13955000,
+      "lotArea": 165,
+      "floorArea": 142,
+      "bedRooms": null,
+      "bathRooms": null,
+      "parking": null,
+      "details": "NRFO house and lot in Camella Laoag, Laoag City. Model: Freya. 165 sqm lot. Contact us for updated pricing and availability.",
+      "slug": "freya-camella-laoag-nrfo-165sqm",
+      "subdivision": "Camella Laoag",
+      "city": "Laoag City",
+      "province": "Ilocos Norte",
+      "country": "Philippines",
+      "region": "Region I",
+      "category": "NRFO",
+      "model": "Freya",
+      "location": {
+        "address": "Camella Laoag",
+        "barangay": "",
+        "city": "Laoag City",
+        "province": "Ilocos Norte",
+        "country": "Philippines",
+        "region": "Region I",
+        "zipCode": null,
+        "coordinates": {
+          "lat": 18.1978,
+          "lng": 120.5927
+        },
+        "boundaries": null
+      },
+      "heroImage": "camella-photos/_cropped/Freya 165sqm Camella Laoag_photo.jpg",
+      "sourceSheet": "camella-photos/Camella Laoag/NRFO 15_ in 18mos/Freya 165sqm Camella Laoag.png",
+      "features": [
+        "gated",
+        "road"
+      ],
+      "amenities": [
+        "security"
+      ],
+      "_meta": {
+        "categoryFolder": "NRFO 15_ in 18mos",
+        "sourceFileName": "Freya 165sqm Camella Laoag.png"
+      }
+    },
+    {
+      "key": "camella-laoag-nrfo-freya-168-freya-168sqm-camella-laoag",
+      "title": "Freya, 168 sqm lot — Camella Laoag (NRFO)",
+      "type": "HOUSE_AND_LOT",
+      "status": "AVAILABLE",
+      "price": 14086000,
+      "lotArea": 168,
+      "floorArea": 142,
+      "bedRooms": null,
+      "bathRooms": null,
+      "parking": null,
+      "details": "NRFO house and lot in Camella Laoag, Laoag City. Model: Freya. 168 sqm lot. Contact us for updated pricing and availability.",
+      "slug": "freya-camella-laoag-nrfo-168sqm",
+      "subdivision": "Camella Laoag",
+      "city": "Laoag City",
+      "province": "Ilocos Norte",
+      "country": "Philippines",
+      "region": "Region I",
+      "category": "NRFO",
+      "model": "Freya",
+      "location": {
+        "address": "Camella Laoag",
+        "barangay": "",
+        "city": "Laoag City",
+        "province": "Ilocos Norte",
+        "country": "Philippines",
+        "region": "Region I",
+        "zipCode": null,
+        "coordinates": {
+          "lat": 18.1978,
+          "lng": 120.5927
+        },
+        "boundaries": null
+      },
+      "heroImage": "camella-photos/_cropped/Freya 168sqm Camella Laoag_photo.jpg",
+      "sourceSheet": "camella-photos/Camella Laoag/NRFO 15_ in 18mos/Freya 168sqm Camella Laoag.png",
+      "features": [
+        "gated",
+        "road"
+      ],
+      "amenities": [
+        "security"
+      ],
+      "_meta": {
+        "categoryFolder": "NRFO 15_ in 18mos",
+        "sourceFileName": "Freya 168sqm Camella Laoag.png"
+      }
+    },
+    {
+      "key": "camella-laoag-nrfo-greta-168-greta-168sqm-camella-laoag",
+      "title": "Greta, 168 sqm lot — Camella Laoag (NRFO)",
+      "type": "HOUSE_AND_LOT",
+      "status": "AVAILABLE",
+      "price": 14678000,
+      "lotArea": 168,
+      "floorArea": 166,
+      "bedRooms": null,
+      "bathRooms": null,
+      "parking": null,
+      "details": "NRFO house and lot in Camella Laoag, Laoag City. Model: Greta. 168 sqm lot. Contact us for updated pricing and availability.",
+      "slug": "greta-camella-laoag-nrfo-168sqm",
+      "subdivision": "Camella Laoag",
+      "city": "Laoag City",
+      "province": "Ilocos Norte",
+      "country": "Philippines",
+      "region": "Region I",
+      "category": "NRFO",
+      "model": "Greta",
+      "location": {
+        "address": "Camella Laoag",
+        "barangay": "",
+        "city": "Laoag City",
+        "province": "Ilocos Norte",
+        "country": "Philippines",
+        "region": "Region I",
+        "zipCode": null,
+        "coordinates": {
+          "lat": 18.1978,
+          "lng": 120.5927
+        },
+        "boundaries": null
+      },
+      "heroImage": "camella-photos/_cropped/Greta 168sqm Camella Laoag_photo.jpg",
+      "sourceSheet": "camella-photos/Camella Laoag/NRFO 15_ in 18mos/Greta 168sqm Camella Laoag.png",
+      "features": [
+        "gated",
+        "road"
+      ],
+      "amenities": [
+        "security"
+      ],
+      "_meta": {
+        "categoryFolder": "NRFO 15_ in 18mos",
+        "sourceFileName": "Greta 168sqm Camella Laoag.png"
+      }
+    }
+  ]
+}

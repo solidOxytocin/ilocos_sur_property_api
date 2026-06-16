@@ -13,6 +13,7 @@ const getAllQuerySchema = z.object({
   amenities: z.union([z.string(), z.array(z.string())]).optional(),
   minPrice: z.coerce.number().finite().nonnegative().optional(),
   maxPrice: z.coerce.number().finite().nonnegative().optional(),
+  province: z.string().trim().optional(),
   city: z.string().trim().optional(),
   barangay: z.string().trim().optional(),
   minArea: z.coerce.number().finite().nonnegative().optional(),
@@ -159,6 +160,7 @@ router.get('/getAll', validateRequest({ query: getAllQuerySchema }), async (req,
         amenities,
         minPrice,
         maxPrice,
+        province,
         city,
         barangay,
         minArea,
@@ -175,11 +177,18 @@ router.get('/getAll', validateRequest({ query: getAllQuerySchema }), async (req,
         const queryStr = String(searchQuery);
         where.OR = [
             { title: { contains: queryStr, mode: 'insensitive' } },
+            { location: { is: { province: { contains: queryStr, mode: 'insensitive' } } } },
             { location: { is: { city: { contains: queryStr, mode: 'insensitive' } } } },
             { location: { is: { barangay: { contains: queryStr, mode: 'insensitive' } } } },
             { location: { is: { address: { contains: queryStr, mode: 'insensitive' } } } },
         ];
-    } 
+    }
+
+    if (province) {
+        if (!where.location) where.location = {};
+        if (!where.location.is) where.location.is = {};
+        where.location.is.province = { equals: String(province), mode: 'insensitive' };
+    }
     
     if (city) {
         if (!where.location) where.location = {};

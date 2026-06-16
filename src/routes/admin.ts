@@ -35,7 +35,7 @@ const locationSchema = z.object({
   address: z.string().trim().min(1),
   barangay: z.string().trim().min(1),
   city: z.string().trim().min(1),
-  province: z.string().trim().min(1),
+  province: z.enum(["Ilocos Sur", "Ilocos Norte"]),
   country: z.string().trim().min(1).optional(),
   region: z.string().trim().min(1).nullable().optional(),
   zipCode: z.string().trim().min(1).nullable().optional(),
