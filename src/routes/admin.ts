@@ -62,6 +62,7 @@ const createPropertySchema = z.object({
   parking: z.coerce.number().int().min(0).optional(),
   details: z.string().optional(),
   slug: z.string().trim().min(1).optional(),
+  featured: z.coerce.boolean().optional(),
   location: locationSchema.optional(),
   media: z.array(mediaSchema).optional(),
   features: z.array(keyRefSchema).optional(),
@@ -72,6 +73,10 @@ const updatePropertySchema = createPropertySchema.partial();
 
 const deleteManySchema = z.object({
   ids: z.array(z.coerce.number().int().positive()).min(1),
+});
+
+const setFeaturedSchema = z.object({
+  ids: z.array(z.coerce.number().int().positive()),
 });
 
 router.post("/auth/login", validateRequest({ body: loginSchema }), async (req, res) => {
@@ -213,6 +218,7 @@ router.post("/property", validateRequest({ body: createPropertySchema }), async 
       parking,
       details,
       slug,
+      featured,
       location,
       media,
       features,
@@ -227,6 +233,7 @@ router.post("/property", validateRequest({ body: createPropertySchema }), async 
       slug: slug || title.toLowerCase().replace(/\s+/g, "-"),
     };
 
+    if (featured !== undefined) data.featured = featured;
     if (lotArea !== undefined) data.lotArea = lotArea;
     if (floorArea !== undefined) data.floorArea = floorArea;
     if (bedRooms !== undefined) data.bedRooms = bedRooms;
@@ -303,7 +310,7 @@ router.put(
   async (req, res) => {
     try {
       const id = Number(req.params.id);
-      const { title, type, status, price, lotArea, floorArea, bedRooms, bathRooms, parking, details, slug, location, media, features, amenities } =
+      const { title, type, status, price, lotArea, floorArea, bedRooms, bathRooms, parking, details, slug, featured, location, media, features, amenities } =
         req.body;
 
       if (media && Array.isArray(media)) {
@@ -328,6 +335,7 @@ router.put(
       if (parking !== undefined) data.parking = parking;
       if (details !== undefined) data.details = details;
       if (slug !== undefined) data.slug = slug;
+      if (featured !== undefined) data.featured = featured;
 
       if (location) {
         data.location = {
@@ -460,6 +468,29 @@ router.post("/property/delete-many", validateRequest({ body: deleteManySchema })
   } catch (error: any) {
     console.error("Error deleting properties:", error);
     return res.status(500).json({ error: "Failed to delete properties" });
+  }
+});
+
+router.post("/property/featured", validateRequest({ body: setFeaturedSchema }), async (req, res) => {
+  try {
+    const { ids } = req.body;
+    const intIds = ids as number[];
+
+    await prisma.$transaction([
+      prisma.property.updateMany({
+        where: { id: { notIn: intIds } },
+        data: { featured: false },
+      }),
+      prisma.property.updateMany({
+        where: { id: { in: intIds } },
+        data: { featured: true },
+      }),
+    ]);
+
+    return res.json({ success: true, message: `${intIds.length} featured propert${intIds.length === 1 ? "y" : "ies"} saved`, count: intIds.length });
+  } catch (error: any) {
+    console.error("Error setting featured properties:", error);
+    return res.status(500).json({ error: "Failed to update featured properties" });
   }
 });
 
