@@ -20,6 +20,7 @@ const getAllQuerySchema = z.object({
   maxArea: z.coerce.number().finite().nonnegative().optional(),
   sortBy: z.enum(["price", "createdAt", "lotArea", "city", "title"]).optional(),
   sortOrder: z.enum(["asc", "desc"]).optional(),
+  featured: z.enum(["true", "false"]).optional(),
   page: z.coerce.number().int().min(1).optional(),
   limit: z.coerce.number().int().min(1).max(100).optional(),
 });
@@ -167,11 +168,16 @@ router.get('/getAll', validateRequest({ query: getAllQuerySchema }), async (req,
         maxArea,
         sortBy,
         sortOrder,
+        featured,
         page = 1,
         limit = 12,
     } = parsedQuery;
 
     const where: any = {};
+
+    if (featured) {
+        where.featured = featured === "true";
+    }
 
     if (searchQuery) {
         const queryStr = String(searchQuery);
