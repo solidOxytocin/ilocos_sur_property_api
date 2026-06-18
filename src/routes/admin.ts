@@ -54,7 +54,7 @@ const createPropertySchema = z.object({
   title: z.string().trim().min(1),
   type: propertyTypeEnum.optional(),
   status: propertyStatusEnum.optional(),
-  price: z.coerce.number().finite().nonnegative(),
+  price: z.coerce.number().finite().nonnegative().nullable().optional(),
   lotArea: z.coerce.number().finite().nonnegative().optional(),
   floorArea: z.coerce.number().finite().nonnegative().optional(),
   bedRooms: z.coerce.number().int().min(0).optional(),
@@ -229,7 +229,8 @@ router.post("/property", validateRequest({ body: createPropertySchema }), async 
       title,
       type,
       status,
-      price,
+      // 0 is the "Price on request" sentinel — the UI hides any non-positive price.
+      price: price ?? 0,
       slug: slug || title.toLowerCase().replace(/\s+/g, "-"),
     };
 
@@ -327,7 +328,7 @@ router.put(
       if (title !== undefined) data.title = title;
       if (type !== undefined) data.type = type;
       if (status !== undefined) data.status = status;
-      if (price !== undefined) data.price = price;
+      if (price !== undefined) data.price = price ?? 0;
       if (lotArea !== undefined) data.lotArea = lotArea;
       if (floorArea !== undefined) data.floorArea = floorArea;
       if (bedRooms !== undefined) data.bedRooms = bedRooms;
